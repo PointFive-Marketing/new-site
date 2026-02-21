@@ -37,14 +37,19 @@ export function TestimonialSection() {
           </div>
 
           {/* Right — G2 Reviews */}
-          <div className="flex flex-col items-center rounded-2xl border border-foreground/[0.06] bg-neutral-50 p-10 text-center">
+          <a
+            href="https://www.g2.com/sellers/pointfive"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center rounded-2xl border border-foreground/[0.06] bg-neutral-50 p-10 text-center transition-colors hover:border-primary/20 hover:shadow-md"
+          >
             {/* G2 Logo */}
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FF492C]">
               <span className="text-2xl font-bold text-white">G2</span>
             </div>
 
             <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-neutral-500">
-              Rated on G2 Crowd
+              Rated on G2
             </p>
 
             {/* Stars */}
@@ -61,10 +66,13 @@ export function TestimonialSection() {
               className="mt-3 font-mono font-bold text-foreground"
               style={{ fontSize: "clamp(40px, 4vw, 56px)" }}
             >
-              4.8
+              4.9
             </p>
             <p className="mt-1 text-sm text-neutral-500">
               out of 5 stars
+            </p>
+            <p className="mt-1 text-xs text-neutral-500">
+              32 reviews
             </p>
 
             {/* Review highlights */}
@@ -82,7 +90,7 @@ export function TestimonialSection() {
                 rating={4.9}
               />
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

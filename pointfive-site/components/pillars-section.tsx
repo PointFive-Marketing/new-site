@@ -68,31 +68,56 @@ const pillars: Array<{
 function IconRow({
   icon: Icon,
   label,
+  dark,
 }: {
   icon: LucideIcon
   label: string
+  dark?: boolean
 }) {
   return (
-    <div className="flex items-start gap-3">
-      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary-tint text-primary">
-        <Icon className="h-3.5 w-3.5" />
+    <div className="flex items-center gap-2.5">
+      <span
+        className={
+          dark
+            ? "flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/10 text-white"
+            : "flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-primary-tint text-primary"
+        }
+      >
+        <Icon className="h-3 w-3" />
       </span>
-      <span className="text-sm leading-snug text-neutral-600">{label}</span>
+      <span
+        className={
+          dark
+            ? "text-sm leading-snug text-[#B4B4D0]"
+            : "text-sm leading-snug text-neutral-600"
+        }
+      >
+        {label}
+      </span>
     </div>
   )
 }
 
 export function PillarsSection() {
   return (
-    <section className="bg-neutral-50">
-      <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-24">
-        {/* Section header */}
+    <section className="relative overflow-hidden bg-[#0A0A1A]">
+      {/* Subtle glow */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-30"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(0,0,238,0.12) 0%, transparent 70%)",
+        }}
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-[1200px] px-6 py-14 md:py-16">
+        {/* Section header — dark */}
         <div className="text-center">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-primary">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
             The platform
           </p>
           <h2
-            className="mx-auto mt-4 max-w-2xl text-balance text-foreground"
+            className="mx-auto mt-3 max-w-2xl text-balance text-white"
             style={{
               fontSize: "clamp(32px, 4vw, 48px)",
               lineHeight: 1.1,
@@ -104,40 +129,41 @@ export function PillarsSection() {
           </h2>
         </div>
 
-        {/* Pillar cards — 4 columns */}
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Pillar cards — dark */}
+        <div className="mt-10 grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
           {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className="group relative flex flex-col rounded-2xl border border-foreground/[0.06] bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5"
+              className="group relative flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#0000EE]/10 md:p-6"
             >
-              {/* Green band: step number + headline */}
-              <div className="mb-6 flex items-center gap-2 rounded-lg bg-[#00E639] px-3 py-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 font-mono text-xs font-bold text-white">
+              {/* Dark band with green font (compact) */}
+              <div className="mb-3 flex items-center gap-2 rounded-md border border-[#00E639]/30 bg-white/5 px-2.5 py-1.5">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00E639]/20 font-mono text-[10px] font-bold text-[#00E639]">
                   {i + 1}
                 </span>
-                <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-white">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#00E639]">
                   {pillar.badge}
                 </span>
               </div>
 
-              {/* Main icon */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-tint">
-                <pillar.icon className="h-6 w-6 text-primary" />
+              {/* Main icon + title on one line */}
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                  <pillar.icon className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-lg font-bold leading-tight text-white">
+                  {pillar.title}
+                </h3>
               </div>
 
-              {/* Title */}
-              <h3 className="mt-5 text-xl font-bold text-foreground">
-                {pillar.title}
-              </h3>
-
-              {/* Icon + label rows */}
-              <div className="mt-4 flex flex-col gap-3">
+              {/* Icon + label rows (dark) */}
+              <div className="mt-3 flex flex-col gap-2">
                 {pillar.items.map((item, j) => (
                   <IconRow
                     key={j}
                     icon={item.icon}
                     label={item.label}
+                    dark
                   />
                 ))}
               </div>

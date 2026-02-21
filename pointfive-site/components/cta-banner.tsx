@@ -1,5 +1,8 @@
 import { ArrowRight } from "lucide-react"
 
+const DEMO_URL = "https://www.pointfive.co/request-demo"
+const WEBINAR_URL = "https://hs.pointfive.co/how-nubank-scales-financial-services-with-dynamodb-without-waste"
+
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-[#0A0A1A]">
@@ -12,7 +15,7 @@ export function CtaBanner() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 py-20 text-center md:py-28">
+      <div className="relative mx-auto max-w-[1200px] px-4 py-16 text-center sm:px-6 md:py-28">
         <h2
           className="mx-auto max-w-3xl text-balance text-white"
           style={{
@@ -31,15 +34,19 @@ export function CtaBanner() {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0000EE] px-8 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0000CC] hover:shadow-lg hover:shadow-[#0000EE]/25"
+            href={DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0000EE] px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0000CC] hover:shadow-lg hover:shadow-[#0000EE]/25 sm:w-auto sm:px-8"
           >
             Book a Demo
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/5"
+            href={WEBINAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/5 sm:w-auto sm:px-8"
           >
             See it in action
           </a>
