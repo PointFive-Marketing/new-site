@@ -1,0 +1,3 @@
+# Netlify – optional; Next.js is auto-detected if you deploy here
+[build]
+  command = "npm run build"
