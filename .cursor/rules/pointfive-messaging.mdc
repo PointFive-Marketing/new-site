@@ -1,0 +1,63 @@
+---
+description: PointFive brand voice, messaging, and memory — use for all copy, positioning, and technical content in this project
+alwaysApply: true
+---
+
+# PointFive Brand Voice & Messaging (Project Memory)
+
+When writing copy, docs, or UI text for this project, follow PointFive messaging and use the facts below. Call on this rule whenever generating or editing content for the website, design system, or any PointFive materials.
+
+## Company & Positioning
+- **PointFive:** Infrastructure Efficiency Management platform — optimizes cloud and AI for usage, cost, and performance. Founded by former IntSights execs (Rapid7 $350M); $42M raised (Index, Salesforce Ventures); 90+ employees.
+- **Positioning:** Purpose-built **Cloud Efficiency Posture Management (CEPM)**. NOT a cost visibility tool; NOT FinOps. Focus on **optimization and control**, not cost accounting.
+- **Tagline:** "Trustworthy opportunities through deep detection, broad coverage, end-to-end remediation"
+
+## Three Pillars
+1. **InfraFabric** — Continuous system capture, agentless, multi-data-source; compute, storage, AI, data coverage.
+2. **DeepWaste™ Detection Engine** — 400+ detections (10 new weekly), 7 platforms, 40+ services, 6 waste categories; research-driven, supervised AI. Always use "DeepWaste™" with ™.
+3. **Agentic** — Autonomous efficiency resolution, context-powered agents, engineering-grade execution.
+
+## Six Waste Categories
+Unused Resources | Underutilization | Architecture Issues | Configuration Gaps | Modernization | Commitments
+
+## Key Differentiators
+- **Deep waste:** Hidden inefficiencies that look like normal usage.
+- **Agentless:** Read-only, no intrusive agents (industry-first for Kubernetes).
+- **Engineering-first:** Built for engineers, not finance.
+- **Proof:** 1200%+ avg ROI, $50M savings across 20 accounts, 10-day ROI (Nubank).
+
+## Stats to Use (when relevant)
+- 400+ detections, 10 new weekly | 7 cloud platforms | 40+ services | 6 waste categories
+- 1200%+ average ROI | $50M savings, 20 accounts | 10 days to ROI (Nubank)
+- 2,000+ engineers at Nubank, 50%+ engagement | 85% internal Snowflake savings
+- Trademarks: **DeepWaste™**, InfraFabric, Agentic
+
+## Tone & Language
+- **Use:** optimization, efficiency, waste detection, autonomous, agentless, engineering-grade, CEPM.
+- **Avoid:** cost management, FinOps (unless contrasting), savings tool, billing analyzer.
+- **Voice:** Technical but accessible; data-driven; confident not arrogant; engineering-focused; problem–solution.
+- **CTAs:** Engineering-focused (e.g. "Start optimizing", "Book a demo" — not "Learn more").
+
+## Audiences
+- **Primary:** Engineering leaders (VP Eng, Director, CTO) — productivity, efficiency, capacity reclamation.
+- **Secondary:** FinOps — ROI, attribution; message as "recommendations engineers will act on."
+- **Tertiary:** Platform/SRE — workflow integration, IaC, 1-click remediation.
+
+## Competitive Framing
+- vs visibility (CloudZero, Finout): We eliminate waste; they show spend.
+- vs add-ons (Harness, Datadog CCM): We're optimization-first; they add cost awareness.
+- vs legacy FinOps (Flexera): We do deep optimization; they focus on governance.
+
+## Messaging Fixes
+- ❌ "See your cloud costs" → ✅ "Eliminate hidden inefficiencies other tools miss"
+- ❌ "Cost management" → ✅ "CEPM" or "Infrastructure Efficiency Management"
+- ❌ "We analyze bills" → ✅ "We correlate billing with operational metrics and configuration state"
+- ❌ "Save money" → ✅ "Eliminate DeepWaste™" or "Optimize usage, cost, and performance"
+
+## Checklist Before Publishing
+- Specific numbers (400+, 1200%, etc.) where applicable
+- Position as CEPM/optimization, not FinOps
+- Engineering-focused language; trademark DeepWaste™ correct
+- Confident, not arrogant; audience = engineering personas
+
+**Reference:** Full source in `/Users/dave.anderson/Downloads/cursorrules` (brand voice doc). Last updated Feb 2025.
