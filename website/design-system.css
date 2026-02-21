@@ -1,0 +1,167 @@
+/**
+ * Design system — CSS custom properties
+ * Extracted from dw-loader visual style (PointFive / DeepWaste)
+ * Use on :root or a wrapper (e.g. #dw-mount) for scoping.
+ */
+
+:root {
+  /* ─── Colors ─── */
+  --blue: #0000ee;
+  --blue-dark: #0000aa;
+  --blue-light: #e8e8ff;
+  --blue-glow: rgba(0, 0, 238, 0.08);
+  --blue-gradient-end: #4444ff;
+
+  --green: #00e639;
+  --green-dark: #00c030;
+  --green-muted: #008a22;
+
+  --dark: #0a0a1a;
+  --white: #ffffff;
+
+  --gray-900: #111127;
+  --gray-700: #3a3a5c;
+  --gray-500: #6b6b8d;
+  --gray-300: #b4b4d0;
+  --gray-100: #f0f0f8;
+  --gray-50: #f8f8fc;
+
+  /* Semantic / surface */
+  --color-bg: var(--white);
+  --color-text: var(--dark);
+  --color-text-muted: var(--gray-500);
+  --color-border: var(--gray-100);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+
+  /* Provider / accent (for badges, icons) */
+  --provider-aws: #ff9900;
+  --provider-aws-bg: rgba(255, 153, 0, 0.15);
+  --provider-azure: #0078d4;
+  --provider-azure-bg: rgba(0, 120, 215, 0.15);
+  --provider-azure-light: #4db8ff;
+  --provider-gcp: #4285f4;
+  --provider-gcp-bg: rgba(66, 133, 244, 0.15);
+  --provider-gcp-green: #34a853;
+  --provider-k8s: #326de6;
+  --provider-k8s-bg: rgba(50, 109, 230, 0.15);
+  --provider-snowflake: #29b6f6;
+  --provider-snowflake-bg: rgba(41, 182, 246, 0.15);
+  --provider-data: #5c6bc0;
+
+  /* Coverage icon backgrounds (light theme) */
+  --coverage-aws-bg: #fff3e0;
+  --coverage-azure-bg: #e3f2fd;
+  --coverage-gcp-bg: #e8f5e9;
+  --coverage-data-bg: #e8eaf6;
+  --coverage-k8s-bg: #ede7f6;
+
+  /* Overlay / glow */
+  --glow-blue: rgba(0, 0, 238, 0.04);
+  --glow-green: rgba(0, 230, 57, 0.03);
+  --glow-blue-strong: rgba(0, 0, 238, 0.12);
+  --glow-green-strong: rgba(0, 230, 57, 0.06);
+  --overlay-white-08: rgba(255, 255, 255, 0.08);
+  --overlay-white-07: rgba(255, 255, 255, 0.07);
+  --overlay-white-04: rgba(255, 255, 255, 0.04);
+
+  /* ─── Border radius ─── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 100px;
+
+  /* ─── Typography ─── */
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --text-hero: clamp(40px, 5.5vw, 72px);
+  --text-hero-sub: 19px;
+  --text-section-title: clamp(32px, 4vw, 48px);
+  --text-section-desc: 17px;
+  --text-section-label: 12px;
+  --text-cta-title: clamp(32px, 4vw, 52px);
+  --text-stat: 42px;
+  --text-stat-sm: 32px;
+  --text-card-title: 22px;
+  --text-card-title-sm: 20px;
+  --text-card-title-xs: 18px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-body-sm: 15px;
+  --text-caption: 14px;
+  --text-small: 13px;
+  --text-tiny: 12px;
+  --text-micro: 11px;
+  --text-overline: 10px;
+
+  --line-height-tight: 1.08;
+  --line-height-heading: 1.12;
+  --line-height-body: 1.6;
+  --line-height-relaxed: 1.65;
+  --line-height-caption: 1.35;
+
+  --letter-spacing-tight: -0.03em;
+  --letter-spacing-normal: -0.02em;
+  --letter-spacing-wide: -0.01em;
+  --letter-spacing-uppercase: 0.08em;
+  --letter-spacing-uppercase-wide: 0.1em;
+  --letter-spacing-label: 0.15em;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ─── Spacing ─── */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+  --space-12: 32px;
+  --space-14: 36px;
+  --space-16: 40px;
+  --space-18: 44px;
+  --space-20: 48px;
+  --space-24: 56px;
+  --space-25: 60px;
+  --space-30: 80px;
+  --space-40: 100px;
+
+  --container-max: 1200px;
+  --section-padding-y: 100px;
+  --section-padding-y-sm: 80px;
+  --section-padding-y-hero: 60px 0 80px;
+  --section-padding-y-hero-sm: 40px 0 40px;
+  --ticker-padding-y: 40px;
+  --footer-padding-y: 40px;
+
+  /* ─── Borders ─── */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --border-color: var(--gray-100);
+  --border-color-dark: var(--color-border-strong);
+  --border-radius-card: var(--radius-md);
+  --border-radius-button: var(--radius-pill);
+
+  /* ─── Shadows ─── */
+  --shadow-blue-sm: 0 4px 16px rgba(0, 0, 238, 0.08);
+  --shadow-blue-md: 0 4px 20px rgba(0, 0, 238, 0.06);
+  --shadow-button: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+  /* ─── Transitions ─── */
+  --ease-default: 0.25s ease;
+  --ease-slow: 0.3s ease;
+  --ease-slower: 0.35s ease;
+
+  /* ─── Z-index ─── */
+  --z-raised: 1;
+}
