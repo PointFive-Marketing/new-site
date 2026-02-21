@@ -24,6 +24,7 @@ const PRODUCT_COLUMNS = [
     links: [
       { label: "Product Overview", href: "/product", internal: true },
       { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
+      { label: "AI", href: "/ai", internal: true },
       { label: "Feature Releases", href: "/product#releases", internal: true },
     ],
   },
