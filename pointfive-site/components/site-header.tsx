@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import {
   Sheet,
@@ -16,18 +17,15 @@ import {
 const DEMO_URL = "https://www.pointfive.co/request-demo"
 const BASE = "https://www.pointfive.co"
 
-// Product: column-based so you can add more columns/pages later
+// Product: internal /product page; external links for others
 const PRODUCT_COLUMNS = [
   {
     title: "Overview",
     links: [
-      { label: "Product Overview", href: `${BASE}/product` },
-      { label: "Feature Releases", href: `${BASE}/product#releases` },
+      { label: "Product Overview", href: "/product", internal: true },
+      { label: "Feature Releases", href: "/product#releases", internal: true },
     ],
   },
-  // Add more columns as you add product pages, e.g.:
-  // { title: "Platform", links: [{ label: "Integrations", href: "..." }, ...] },
-  // { title: "Solutions", links: [{ label: "By use case", href: "..." }, ...] },
 ]
 
 const RESOURCES_LINKS = [
@@ -172,7 +170,16 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                   <ul className="flex flex-col gap-0">
                     {col.links.map((item) => (
                       <li key={item.label}>
-                        <MegaLink href={item.href}>{item.label}</MegaLink>
+                        {"internal" in item && item.internal ? (
+                          <Link
+                            href={item.href}
+                            className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
+                          >
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <MegaLink href={item.href}>{item.label}</MegaLink>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -270,16 +277,27 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                   <p className="mb-1 mt-2 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Product
                   </p>
-                  {PRODUCT_COLUMNS.flatMap((col) => col.links).map((item) => (
-                    <NavLink
-                      key={item.label}
-                      href={item.href}
-                      className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
+                  {PRODUCT_COLUMNS.flatMap((col) => col.links).map((item) =>
+                    "internal" in item && item.internal ? (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <NavLink
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </NavLink>
+                    )
+                  )}
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Resources
                   </p>
