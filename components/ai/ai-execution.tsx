@@ -44,7 +44,7 @@ export function AIExecution() {
           {ITEMS.map((item, i) => (
             <div
               key={i}
-              className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
+              className="rounded-sm border border-border bg-card p-6 transition-shadow hover:shadow-md"
             >
               <h3 className="font-bold text-foreground">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-500">

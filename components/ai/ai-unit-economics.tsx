@@ -49,7 +49,7 @@ export function AIUnitEconomics() {
           {ITEMS.map((item, i) => (
             <div
               key={i}
-              className="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.07]"
+              className="rounded-sm border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.07]"
             >
               <h3 className="text-lg font-bold text-white">{item.title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#B4B4D0]">

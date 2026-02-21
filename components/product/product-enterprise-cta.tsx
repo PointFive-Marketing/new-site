@@ -32,7 +32,7 @@ export function ProductEnterpriseCta() {
               </p>
             </div>
             <div className="shrink-0">
-              <div className="overflow-hidden rounded-xl border border-border bg-muted/50 p-6">
+              <div className="overflow-hidden rounded-sm border border-border bg-muted/50 p-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={productImages.enterpriseReady}

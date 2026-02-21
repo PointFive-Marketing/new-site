@@ -54,7 +54,7 @@ export function LatestUpdatesSection() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col overflow-hidden rounded-2xl border border-foreground/[0.08] bg-background transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col overflow-hidden rounded-sm border border-foreground/[0.08] bg-background transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
             >
               {/* Card image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A0A1A]">

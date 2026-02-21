@@ -22,7 +22,7 @@ export function VideoCtaSection() {
             href={HIGHLIGHTS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative block overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d1a] aspect-video"
+            className="group relative block overflow-hidden rounded-sm border border-white/10 bg-[#0d0d1a] aspect-video"
           >
             {/* Soft purple/blue gradient (presentation-style) */}
             <div

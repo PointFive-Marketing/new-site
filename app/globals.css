@@ -50,8 +50,8 @@
   --chart-4: #B4B4D0;
   --chart-5: #00C030;
 
-  /* Radius */
-  --radius: 0.75rem;
+  /* Radius — nearly square, not big circles */
+  --radius: 4px;
 
   /* Sidebar */
   --sidebar: #F8F8FC;

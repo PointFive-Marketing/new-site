@@ -134,7 +134,7 @@ export function PillarsSection() {
           {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className="group relative flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#0000EE]/10 md:p-6"
+              className="group relative flex flex-col rounded-sm border border-white/[0.08] bg-white/[0.04] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#0000EE]/10 md:p-6"
             >
               {/* Dark band with green font (compact) */}
               <div className="mb-3 flex items-center gap-2 rounded-md border border-[#00E639]/30 bg-white/5 px-2.5 py-1.5">
@@ -148,7 +148,7 @@ export function PillarsSection() {
 
               {/* Main icon + title on one line */}
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-white/10">
                   <pillar.icon className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold leading-tight text-white">

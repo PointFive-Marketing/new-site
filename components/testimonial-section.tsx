@@ -41,10 +41,10 @@ export function TestimonialSection() {
             href="https://www.g2.com/sellers/pointfive"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center rounded-2xl border border-foreground/[0.06] bg-neutral-50 p-10 text-center transition-colors hover:border-primary/20 hover:shadow-md"
+            className="flex flex-col items-center rounded-sm border border-foreground/[0.06] bg-neutral-50 p-10 text-center transition-colors hover:border-primary/20 hover:shadow-md"
           >
             {/* G2 Logo */}
-            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FF492C]">
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-sm bg-[#FF492C]">
               <span className="text-2xl font-bold text-white">G2</span>
             </div>
 

@@ -88,9 +88,9 @@ export function ProductCapabilities() {
           {capabilities.map((cap) => (
             <div
               key={cap.title}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10 md:p-6"
+              className="flex flex-col rounded-sm border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10 md:p-6"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-sm bg-primary/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={cap.image}

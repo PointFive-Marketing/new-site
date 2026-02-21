@@ -44,7 +44,7 @@ export function LottiePlayer({
   if (error) {
     return (
       <div
-        className={`flex min-h-[200px] items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#B4B4D0] ${className}`}
+        className={`flex min-h-[200px] items-center justify-center rounded-sm border border-white/10 bg-white/5 text-[#B4B4D0] ${className}`}
         role="img"
         aria-label={alt || "Animation"}
       >
@@ -56,7 +56,7 @@ export function LottiePlayer({
   if (!data) {
     return (
       <div
-        className={`flex min-h-[200px] items-center justify-center rounded-xl border border-white/10 bg-white/5 ${className}`}
+        className={`flex min-h-[200px] items-center justify-center rounded-sm border border-white/10 bg-white/5 ${className}`}
         aria-label={alt || "Loading animation"}
       >
         <div className="h-8 w-8 animate-pulse rounded-full bg-white/10" />
