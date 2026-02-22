@@ -232,6 +232,10 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             </div>
           </MegaMenuTrigger>
 
+          <Link href="/pricing" className={linkClass}>
+            Pricing
+          </Link>
+
           <NavLink href={`${BASE}/contact`} className={linkClass}>
             Contact
           </NavLink>
@@ -326,6 +330,23 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                       {item.label}
                     </NavLink>
                   ))}
+                  <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
+                    Pricing
+                  </p>
+                  <Link
+                    href="/pricing"
+                    className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/net-zero"
+                    className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Net Zero Offer
+                  </Link>
                   <div className="mt-4 border-t border-white/10 pt-4">
                     <NavLink
                       href={`${BASE}/contact`}
