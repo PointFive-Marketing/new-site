@@ -59,6 +59,22 @@ export function AIHero() {
               </a>
             </div>
           </div>
+
+          {/* Product demo video */}
+          <div className="mt-14">
+            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/videos/ai-coworkers-poster.jpg"
+                className="w-full"
+              >
+                <source src="/videos/ai-coworkers-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </section>
