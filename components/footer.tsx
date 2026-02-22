@@ -94,13 +94,15 @@ export function Footer() {
         {/* Top: logo + CTA row */}
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-[320px]">
-            <img
-              src="https://cdn.prod.website-files.com/664c5d9fee3e617bc2829b44/6661db9d841412af863235a4_Logo.svg"
-              alt="PointFive"
-              className="h-6 w-auto brightness-0 invert"
-              width={120}
-              height={24}
-            />
+            <Link href="/">
+              <img
+                src="https://cdn.prod.website-files.com/664c5d9fee3e617bc2829b44/6661db9d841412af863235a4_Logo.svg"
+                alt="PointFive"
+                className="h-6 w-auto brightness-0 invert"
+                width={120}
+                height={24}
+              />
+            </Link>
             <p className="mt-4 text-[14px] leading-relaxed text-[#8888A8]">
               The cloud cost optimization platform that finds and fixes waste
               autonomously — so your team doesn&apos;t have to.

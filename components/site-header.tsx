@@ -20,13 +20,20 @@ const BASE = "https://www.pointfive.co"
 // Product: internal /product page; external links for others
 const PRODUCT_COLUMNS = [
   {
-    title: "Overview",
+    title: "Platform",
     links: [
       { label: "Product Overview", href: "/product", internal: true },
       { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
-      { label: "AI", href: "/ai", internal: true },
+      { label: "AI Engine", href: "/ai", internal: true },
       { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
-      { label: "Feature Releases", href: "/product#releases", internal: true },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "48-Hour Guarantee", href: "/guarantee", internal: true },
+      { label: "Net Zero Cloud Costs", href: "/net-zero", internal: true },
+      { label: "Pricing", href: "/pricing", internal: true },
     ],
   },
 ]
@@ -50,7 +57,7 @@ const MEGA_PANEL_CLASS =
 
 function PointFiveLogo({ className, dark = false }: { className?: string; dark?: boolean }) {
   return (
-    <a href={BASE} className={className}>
+    <Link href="/" className={className}>
       <img
         src="https://cdn.prod.website-files.com/664c5d9fee3e617bc2829b44/6661db9d841412af863235a4_Logo.svg"
         alt="PointFive"
@@ -58,7 +65,7 @@ function PointFiveLogo({ className, dark = false }: { className?: string; dark?:
         height={32}
         className={dark ? "h-7 w-auto brightness-0 invert" : "h-7 w-auto"}
       />
-    </a>
+    </Link>
   )
 }
 
@@ -232,12 +239,8 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             </div>
           </MegaMenuTrigger>
 
-          <Link href="/pricing" className={linkClass}>
-            Pricing
-          </Link>
-
-          <Link href="/guarantee" className={linkClass}>
-            Guarantee
+          <Link href="/net-zero" className={linkClass}>
+            Net Zero
           </Link>
         </nav>
 
