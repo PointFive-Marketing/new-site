@@ -1,6 +1,21 @@
-const categories = [
+import {
+  Cloud,
+  Container,
+  BrainCircuit,
+  Database,
+  Network,
+  Activity,
+  type LucideIcon,
+} from "lucide-react"
+
+const categories: {
+  icon: LucideIcon
+  title: string
+  tags: string[]
+  highlight: string[]
+}[] = [
   {
-    icon: "☁️",
+    icon: Cloud,
     title: "Cloud Providers",
     tags: [
       "AWS",
@@ -17,7 +32,7 @@ const categories = [
     highlight: ["AWS", "Azure", "GCP"],
   },
   {
-    icon: "☸️",
+    icon: Container,
     title: "Kubernetes",
     tags: [
       "EKS (Agentless)",
@@ -32,7 +47,7 @@ const categories = [
     highlight: ["EKS (Agentless)", "AKS (Agentless)", "GKE (Agentless)"],
   },
   {
-    icon: "📊",
+    icon: BrainCircuit,
     title: "Data & AI Platforms",
     tags: [
       "Snowflake",
@@ -47,7 +62,7 @@ const categories = [
     highlight: ["Snowflake", "Databricks", "BigQuery"],
   },
   {
-    icon: "🗄️",
+    icon: Database,
     title: "Databases & Storage",
     tags: [
       "RDS",
@@ -62,7 +77,7 @@ const categories = [
     highlight: [],
   },
   {
-    icon: "🌐",
+    icon: Network,
     title: "Networking",
     tags: [
       "VPC",
@@ -76,7 +91,7 @@ const categories = [
     highlight: [],
   },
   {
-    icon: "📈",
+    icon: Activity,
     title: "Monitoring & Logs",
     tags: [
       "CloudWatch",
@@ -122,7 +137,9 @@ export function NetZeroPlatforms() {
               className="rounded-lg border border-border bg-card p-6"
             >
               <div className="mb-4 flex items-center gap-3 border-b border-border pb-4">
-                <span className="text-2xl">{cat.icon}</span>
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#0000EE]/20 bg-[#0000EE]/5">
+                  <cat.icon className="h-[18px] w-[18px] text-[#0000EE]" />
+                </div>
                 <h3 className="text-[16px] font-bold text-foreground">
                   {cat.title}
                 </h3>
