@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowRight, Clock, Zap, Users, BellOff, Gauge, BadgeDollarSign } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
@@ -106,6 +107,20 @@ export function AICoworkersHero() {
                 Schedule a Demo
                 <ArrowRight className="h-4 w-4" />
               </a>
+            </div>
+          </div>
+
+          {/* Product screenshot */}
+          <div className="mt-14">
+            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+              <Image
+                src="/ai-coworkers/coworker-workflow.jpg"
+                alt="PointFive AI Co-workers interface showing conversational AI creating an automated workflow with visual task diagram"
+                width={1400}
+                height={880}
+                className="w-full"
+                priority
+              />
             </div>
           </div>
 

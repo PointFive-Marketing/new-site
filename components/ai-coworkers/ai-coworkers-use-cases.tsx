@@ -1,3 +1,4 @@
+import Image from "next/image"
 import {
   FileBarChart,
   AlertTriangle,
@@ -89,6 +90,17 @@ export function AICoworkersUseCases() {
             Describe any cloud cost workflow in plain language. Here are just a
             few examples of what teams are building today.
           </p>
+        </div>
+
+        {/* Product screenshot - weekly report setup */}
+        <div className="mb-12 overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+          <Image
+            src="/ai-coworkers/coworker-report.jpg"
+            alt="PointFive AI Co-workers setting up a weekly cost optimization summary report with Slack channel and schedule selection"
+            width={1400}
+            height={880}
+            className="w-full"
+          />
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
