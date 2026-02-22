@@ -111,7 +111,7 @@ export function NetZeroPlatforms() {
           {categories.map((cat) => (
             <div
               key={cat.title}
-              className="rounded-xl border border-border bg-card p-6"
+              className="rounded-sm border border-border bg-card p-6"
             >
               <div className="mb-4 flex items-center gap-2.5 border-b border-border pb-4">
                 <span className="text-xl">{cat.icon}</span>
@@ -123,7 +123,7 @@ export function NetZeroPlatforms() {
                 {cat.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`rounded-md px-2.5 py-1 text-xs font-medium ${
+                    className={`rounded-sm px-2.5 py-1 text-xs font-medium ${
                       cat.highlight.includes(tag)
                         ? "border border-primary/30 bg-primary/10 text-primary"
                         : "border border-border bg-neutral-50 text-neutral-600"

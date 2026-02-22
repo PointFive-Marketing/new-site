@@ -1,0 +1,13 @@
+# PointFive Design System — UI
+
+When building or editing pages and components for this site:
+
+## Border radius
+- **Use minimal radius.** Prefer `rounded-sm` (4px) for cards, containers, buttons, and panels.
+- **Avoid** `rounded-xl`, `rounded-2xl`, `rounded-3xl`, and large custom radii — they conflict with the intended minimal aesthetic.
+- **Reserve `rounded-full`** only for true circles: avatars, pill badges, decorative blurs, and step-number circles.
+- Global theme tokens in `app/globals.css` are set to minimal values (`--radius-sm` through `--radius-xl`); use them or explicit `rounded-sm` for consistency.
+
+## Reference
+- Radius tokens: `app/globals.css` (`--radius`, `--radius-sm`, etc.)
+- Card default: `components/ui/card.tsx` uses `rounded-sm`

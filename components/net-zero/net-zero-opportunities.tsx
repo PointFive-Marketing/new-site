@@ -69,13 +69,13 @@ export function NetZeroOpportunities() {
           {opportunities.map((opp) => (
             <div
               key={opp.title}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-lg hover:shadow-primary/10"
+              className="group rounded-sm border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-lg hover:shadow-primary/10"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-neutral-100 text-xl">
+                <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-neutral-100 text-xl">
                   {opp.icon}
                 </div>
-                <span className="rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent-muted">
+                <span className="rounded-sm bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent-muted">
                   {opp.savings}
                 </span>
               </div>

@@ -50,7 +50,7 @@
   --chart-4: #B4B4D0;
   --chart-5: #00C030;
 
-  /* Radius — nearly square, not big circles */
+  /* Radius — minimal (4px). Use rounded-sm for cards/containers; reserve rounded-full for true circles (avatars, pills). */
   --radius: 4px;
 
   /* Sidebar */
@@ -149,11 +149,11 @@
   --color-neutral-100: var(--neutral-100);
   --color-neutral-50: var(--neutral-50);
 
-  /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 100px;
+  /* Radius — minimal by default (avoid heavy rounded corners) */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
 
   /* Sidebar */
   --color-sidebar: var(--sidebar);

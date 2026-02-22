@@ -37,11 +37,11 @@ export function NetZeroPartner() {
                 {
                   icon: "🔒",
                   title: "ROI Accountability",
-                  text: "Your engineer is accountable for delivering the Net Zero guarantee. Their success depends on yours.",
+                  text: "Your engineer is accountable for delivering your guaranteed net positive outcome. Their success depends on yours.",
                 },
               ].map((f) => (
                 <div key={f.title} className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-neutral-50 text-lg">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-border bg-neutral-50 text-lg">
                     {f.icon}
                   </div>
                   <div>
@@ -53,7 +53,7 @@ export function NetZeroPartner() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-border bg-neutral-50">
+          <div className="overflow-hidden rounded-sm border border-border bg-neutral-50">
             <div className="flex h-[320px] items-center justify-center bg-gradient-to-br from-[#0a0a3e] via-primary to-[#1a1aff]">
               <div className="flex h-28 w-28 items-center justify-center rounded-full border-2 border-white/20 bg-white/10 text-4xl font-semibold text-white">
                 P5

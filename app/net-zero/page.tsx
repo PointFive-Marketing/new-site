@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Net Zero Offer | PointFive",
   description:
-    "Your first month costs you nothing. PointFive's Net Zero guarantee: savings in month one exceed your subscription — or you don't pay. Start today.",
+    "Guaranteed net positive every term. If we don't find more cost optimizations than you've spent, we waive the difference. Most cover their annual fee in a month — Nubank did it in 10 days.",
 }
 
 export default function NetZeroPage() {

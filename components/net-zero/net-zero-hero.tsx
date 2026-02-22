@@ -35,25 +35,25 @@ export function NetZeroHero() {
               className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[58px]"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Your first month
+              Guaranteed <em className="font-semibold italic text-[#7eb8ff]">net positive.</em>
               <br />
-              costs you <em className="font-semibold italic text-[#7eb8ff]">nothing.</em>
+              Every term.
             </h1>
             <p className="mt-6 max-w-[480px] text-lg leading-relaxed text-white/60">
-              PointFive&apos;s Net Zero offer guarantees your first month is
-              completely offset by the savings we find — or you don&apos;t pay.
-              Real ROI, not promises.
+              If we don&apos;t find more cost optimizations than you&apos;ve spent
+              on our software, we waive the difference. Most companies find
+              savings in a month that pay for their yearly fee — Nubank did it in 10 days.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#cta"
-                className="inline-flex items-center rounded-lg bg-primary px-8 py-4 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30"
+                className="inline-flex items-center rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30"
               >
                 Start Net Zero →
               </a>
               <a
                 href="#roi"
-                className="inline-flex items-center rounded-lg border border-white/20 bg-transparent px-8 py-4 text-base font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
+                className="inline-flex items-center rounded-sm border border-white/20 bg-transparent px-8 py-4 text-base font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
               >
                 See the ROI
               </a>
@@ -61,7 +61,7 @@ export function NetZeroHero() {
           </div>
 
           {/* Offer card */}
-          <div className="rounded-xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl md:p-10">
+          <div className="rounded-sm border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl md:p-10">
             <div className="mb-5 text-[11px] font-semibold uppercase tracking-widest text-accent">
               The Net Zero Offer
             </div>
@@ -71,8 +71,9 @@ export function NetZeroHero() {
               Savings
             </h2>
             <p className="mt-2 text-sm text-white/50">
-              If we don&apos;t find savings that exceed your first month&apos;s
-              fee, you pay nothing. We&apos;ve never had to honor that guarantee.
+              At end of year or subscription term: if the cost optimizations we
+              find don&apos;t exceed what you&apos;ve spent on PointFive, we waive
+              the difference. You&apos;re guaranteed net positive. We&apos;ve never had to honor it.
             </p>
             <ul className="mt-8 space-y-4">
               {[
@@ -113,12 +114,13 @@ export function NetZeroHero() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex items-start gap-3 rounded-lg border border-accent/20 bg-accent/10 p-4">
+            <div className="mt-8 flex items-start gap-3 rounded-sm border border-accent/20 bg-accent/10 p-4">
               <span className="text-2xl">🛡️</span>
               <p className="text-[13px] leading-relaxed text-white/70">
                 <strong className="text-accent">Net Zero Guarantee:</strong>{" "}
-                Savings identified in month one exceed your subscription cost —
-                or the month is on us.
+                At end of year or subscription term, if identified savings don&apos;t
+                exceed what you paid, we waive the difference. You&apos;re always net positive.
+                Most customers cover their annual fee in a month — Nubank did it in 10 days.
               </p>
             </div>
           </div>

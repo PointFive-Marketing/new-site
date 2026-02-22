@@ -19,10 +19,10 @@ const steps = [
       "1-click and IaC-ready fixes deployed. Your dedicated engineering partner guides the highest-value items first.",
   },
   {
-    day: "Month 1",
-    title: "Net Zero Achieved",
+    day: "Often Month 1",
+    title: "Annual fee covered",
     description:
-      "Savings realized exceed your subscription cost. The Net Zero guarantee kicks in — and almost nobody needs to use it.",
+      "Most companies find enough savings in the first month to pay for their yearly subscription. Nubank did it in 10 days. Our guarantee backs you through the full term.",
   },
 ]
 

@@ -13,12 +13,12 @@ export function NetZeroRoi() {
               Real results.
             </h2>
             <p className="mt-4 max-w-[600px] text-lg text-neutral-600">
-              Our customers don&apos;t wait months to see value. The average
-              PointFive deployment identifies savings that pay for itself within
-              the first two weeks.
+              Our customers don&apos;t wait months to see value. Most find
+              enough savings in a month to cover their yearly fee — Nubank
+              did it in 10 days.
             </p>
             <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-primary bg-primary p-6 text-white">
+              <div className="rounded-sm border border-primary bg-primary p-6 text-white">
                 <div className="text-4xl font-semibold leading-none md:text-5xl">
                   1200%+
                 </div>
@@ -29,7 +29,7 @@ export function NetZeroRoi() {
                   Based on savings identified vs. platform cost
                 </div>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-sm border border-border bg-card p-6">
                 <div className="text-4xl font-semibold leading-none text-primary md:text-5xl">
                   $50M
                 </div>
@@ -37,7 +37,7 @@ export function NetZeroRoi() {
                   Total savings across 20 key accounts
                 </div>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6 sm:col-span-2">
+              <div className="rounded-sm border border-border bg-card p-6 sm:col-span-2">
                 <div className="text-4xl font-semibold leading-none text-primary md:text-5xl">
                   85%
                 </div>
@@ -48,7 +48,7 @@ export function NetZeroRoi() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-8 shadow-sm md:p-10">
+          <div className="rounded-sm border border-border bg-card p-8 shadow-sm md:p-10">
             <div className="relative">
               <span className="absolute -left-2 -top-2 text-6xl text-primary/20">
                 &ldquo;
@@ -69,7 +69,7 @@ export function NetZeroRoi() {
                     Sr. Director of Engineering, Nubank
                   </div>
                 </div>
-                <div className="ml-auto rounded-md bg-foreground px-3 py-1.5 text-xs font-semibold text-white">
+                <div className="ml-auto rounded-sm bg-foreground px-3 py-1.5 text-xs font-semibold text-white">
                   Nubank
                 </div>
               </div>
