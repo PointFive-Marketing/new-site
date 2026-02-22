@@ -51,41 +51,49 @@ const opportunities = [
 
 export function NetZeroOpportunities() {
   return (
-    <section className="px-6 py-20 md:py-28">
+    <section className="bg-background px-6 py-20 md:py-28">
       <div className="mx-auto max-w-[1200px]">
-        <div className="text-xs font-semibold uppercase tracking-widest text-primary">
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
           DeepWaste™ Detection
-        </div>
-        <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
+        </p>
+        <h2
+          className="mt-3 text-foreground"
+          style={{
+            fontSize: "clamp(28px, 3.5vw, 42px)",
+            lineHeight: 1.1,
+            letterSpacing: "-0.02em",
+            fontWeight: 700,
+          }}
+        >
           Waste hiding in plain sight
         </h2>
-        <p className="mt-4 max-w-[600px] text-lg text-neutral-600">
-          These aren&apos;t theoretical savings. They&apos;re real inefficiencies
-          we find in the first week — the kind traditional FinOps tools never
-          detect.
+        <p className="mt-4 max-w-[600px] text-[16px] leading-relaxed text-neutral-500">
+          These aren&apos;t theoretical savings. They&apos;re real
+          inefficiencies we find in the first week — the kind traditional FinOps
+          tools never detect.
         </p>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {opportunities.map((opp) => (
             <div
               key={opp.title}
-              className="group rounded-sm border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-lg hover:shadow-primary/10"
+              className="group rounded-lg border border-border bg-card p-7 transition-all hover:-translate-y-0.5 hover:border-[#0000EE]/30 hover:shadow-lg hover:shadow-[#0000EE]/10"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-neutral-100 text-xl">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-100 text-xl">
                   {opp.icon}
                 </div>
-                <span className="rounded-sm bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent-muted">
+                <span className="rounded-md bg-[#00E639]/10 px-3 py-1 text-[13px] font-bold text-[#00993d]">
                   {opp.savings}
                 </span>
               </div>
-              <h3 className="mt-4 text-base font-semibold leading-snug text-foreground">
+              <h3 className="mt-4 text-[17px] font-bold leading-snug text-foreground">
                 {opp.title}
               </h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-neutral-600">
+              <p className="mt-3 text-[14px] leading-relaxed text-neutral-500">
                 {opp.description}
               </p>
-              <span className="mt-4 inline-block rounded bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-500">
+              <span className="mt-4 inline-block rounded-md bg-neutral-100 px-2.5 py-1 text-[12px] font-medium text-neutral-500">
                 {opp.tag}
               </span>
             </div>

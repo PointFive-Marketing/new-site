@@ -1,19 +1,39 @@
+import { ArrowRight, Check } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
 const DEMO_URL = "https://www.pointfive.co/request-demo"
 
+const OFFER_ITEMS = [
+  {
+    title: "Full platform access",
+    text: "all 400+ optimization types across your entire stack",
+  },
+  {
+    title: "Dedicated engineering partner",
+    text: "your own PointFive engineer on Slack",
+  },
+  {
+    title: "Value report in 48 hours",
+    text: "quantified savings before you commit to anything",
+  },
+  {
+    title: "Agentless deployment",
+    text: "no agents, no write access, live in hours",
+  },
+]
+
 export function NetZeroHero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0A0A1A]">
+    <section className="relative overflow-hidden bg-[#0A0A1A]">
       <div
-        className="pointer-events-none absolute -top-[200px] -right-[200px] h-[700px] w-[700px] rounded-full opacity-100"
+        className="pointer-events-none absolute -right-[200px] -top-[200px] h-[700px] w-[700px] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(0,0,238,0.25) 0%, transparent 70%)",
         }}
       />
       <div
-        className="pointer-events-none absolute -bottom-[100px] left-[200px] h-[500px] w-[500px] rounded-full opacity-100"
+        className="pointer-events-none absolute -bottom-[100px] left-[200px] h-[500px] w-[500px] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(0,230,57,0.1) 0%, transparent 70%)",
@@ -23,37 +43,45 @@ export function NetZeroHero() {
       <div className="relative z-10">
         <SiteHeader dark />
 
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 py-24 md:grid-cols-2 md:gap-20 md:py-32 lg:gap-24">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 pb-20 pt-16 md:grid-cols-2 md:gap-16 md:pb-28 md:pt-24 lg:gap-20">
           <div className="flex flex-col justify-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-              <span className="text-xs font-medium uppercase tracking-wider text-[#7eb8ff]">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#0000EE]/30 bg-[#0000EE]/10 px-4 py-1.5">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E639]" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#7eb8ff]">
                 Limited Availability · 2025
               </span>
             </div>
             <h1
-              className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[58px]"
-              style={{ letterSpacing: "-0.02em" }}
+              className="text-white"
+              style={{
+                fontSize: "clamp(36px, 5vw, 64px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+                fontWeight: 700,
+              }}
             >
-              Guaranteed <em className="font-semibold italic text-[#7eb8ff]">net positive.</em>
+              Guaranteed{" "}
+              <em className="font-bold italic text-[#7eb8ff]">net positive.</em>
               <br />
               Every term.
             </h1>
-            <p className="mt-6 max-w-[480px] text-lg leading-relaxed text-white/60">
-              If we don&apos;t find more cost optimizations than you&apos;ve spent
-              on our software, we waive the difference. Most companies find
-              savings in a month that pay for their yearly fee — Nubank did it in 10 days.
+            <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-[#B4B4D0]">
+              If we don&apos;t find more cost optimizations than you&apos;ve
+              spent on our software, we waive the difference. Most companies
+              find savings in a month that pay for their yearly fee — Nubank did
+              it in 10 days.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#cta"
-                className="inline-flex items-center rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0000EE] px-8 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0000CC] hover:shadow-lg hover:shadow-[#0000EE]/25"
               >
-                Start Net Zero →
+                Start Net Zero
+                <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#roi"
-                className="inline-flex items-center rounded-sm border border-white/20 bg-transparent px-8 py-4 text-base font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
+                className="inline-flex items-center rounded-full border border-white/20 bg-transparent px-8 py-4 text-[15px] font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5"
               >
                 See the ROI
               </a>
@@ -61,66 +89,50 @@ export function NetZeroHero() {
           </div>
 
           {/* Offer card */}
-          <div className="rounded-sm border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl md:p-10">
-            <div className="mb-5 text-[11px] font-semibold uppercase tracking-widest text-accent">
+          <div className="rounded-lg border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl md:p-10">
+            <p className="mb-5 font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
               The Net Zero Offer
-            </div>
-            <h2 className="text-2xl font-semibold leading-tight text-white md:text-3xl">
+            </p>
+            <h2
+              className="font-bold text-white"
+              style={{
+                fontSize: "clamp(28px, 3vw, 38px)",
+                lineHeight: 1.1,
+                letterSpacing: "-0.02em",
+              }}
+            >
               Guaranteed
               <br />
               Savings
             </h2>
-            <p className="mt-2 text-sm text-white/50">
+            <p className="mt-3 text-[15px] leading-relaxed text-white/55">
               At end of year or subscription term: if the cost optimizations we
-              find don&apos;t exceed what you&apos;ve spent on PointFive, we waive
-              the difference. You&apos;re guaranteed net positive. We&apos;ve never had to honor it.
+              find don&apos;t exceed what you&apos;ve spent on PointFive, we
+              waive the difference. You&apos;re guaranteed net positive. We&apos;ve never
+              had to honor it.
             </p>
             <ul className="mt-8 space-y-4">
-              {[
-                {
-                  title: "Full platform access",
-                  text: "all 400+ optimization types across your entire stack",
-                },
-                {
-                  title: "Dedicated engineering partner",
-                  text: "your own PointFive engineer on Slack",
-                },
-                {
-                  title: "Value report in 48 hours",
-                  text: "quantified savings before you commit to anything",
-                },
-                {
-                  title: "Agentless deployment",
-                  text: "no agents, no write access, live in hours",
-                },
-              ].map((item) => (
+              {OFFER_ITEMS.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10">
-                    <svg
-                      className="h-2.5 w-2.5 text-accent"
-                      viewBox="0 0 12 10"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="1,5 4,8 11,1" />
-                    </svg>
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#00E639]/40 bg-[#00E639]/10">
+                    <Check className="h-3 w-3 text-[#00E639]" />
                   </span>
-                  <span className="text-sm text-white/75">
-                    <strong className="text-white">{item.title}</strong> — {item.text}
+                  <span className="text-[15px] leading-relaxed text-white/75">
+                    <strong className="text-white">{item.title}</strong> —{" "}
+                    {item.text}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex items-start gap-3 rounded-sm border border-accent/20 bg-accent/10 p-4">
+            <div className="mt-8 flex items-start gap-3 rounded-lg border border-[#00E639]/20 bg-[#00E639]/10 p-4">
               <span className="text-2xl">🛡️</span>
-              <p className="text-[13px] leading-relaxed text-white/70">
-                <strong className="text-accent">Net Zero Guarantee:</strong>{" "}
-                At end of year or subscription term, if identified savings don&apos;t
-                exceed what you paid, we waive the difference. You&apos;re always net positive.
-                Most customers cover their annual fee in a month — Nubank did it in 10 days.
+              <p className="text-[14px] leading-relaxed text-white/70">
+                <strong className="text-[#00E639]">
+                  Net Zero Guarantee:
+                </strong>{" "}
+                At end of term, if identified savings don&apos;t exceed what you
+                paid, we waive the difference. Most customers cover their annual
+                fee in a month — Nubank did it in 10 days.
               </p>
             </div>
           </div>
