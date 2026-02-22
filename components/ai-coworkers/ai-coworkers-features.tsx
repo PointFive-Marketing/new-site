@@ -1,48 +1,26 @@
-import {
-  Scaling,
-  Clock,
-  BadgeDollarSign,
-  Network,
-  RotateCcw,
-  ShieldCheck,
-} from "lucide-react"
+import { Brain, FileText, ShieldCheck } from "lucide-react"
 
-const FEATURES = [
+const PILLARS = [
   {
-    icon: Scaling,
-    title: "Autonomous Right-Sizing",
+    icon: Brain,
+    label: "Intelligent Judgment,",
+    labelAccent: "Not Static Rules",
     description:
-      "Agents continuously analyze utilization and resize compute, storage, and database instances to match actual demand — no tickets, no waiting.",
+      "Evaluates value, ownership, behavior patterns, and system state — applying LLM-based reasoning to determine priority, timing, and messaging.",
   },
   {
-    icon: Clock,
-    title: "Scheduled Shutdowns",
+    icon: FileText,
+    label: "Execution + Explanation",
+    labelAccent: "in One Flow",
     description:
-      "Automatically stop idle dev, staging, and test resources outside business hours. Agents learn usage patterns and adapt schedules over time.",
-  },
-  {
-    icon: BadgeDollarSign,
-    title: "Commitment Optimization",
-    description:
-      "Agents manage Reserved Instance and Savings Plan purchases, swaps, and renewals to keep your commitment coverage at the optimal level.",
-  },
-  {
-    icon: Network,
-    title: "Architecture Fixes",
-    description:
-      "Reroute traffic away from expensive NAT gateways, consolidate underused load balancers, and fix cross-AZ data transfer waste automatically.",
-  },
-  {
-    icon: RotateCcw,
-    title: "Safe Rollbacks",
-    description:
-      "Every action taken by an agent is versioned and reversible. One click to roll back any change — full audit trail included.",
+      "Actions, summaries, and reports are generated automatically. Every nudge, escalation, or recommendation comes with clear, human-readable context.",
   },
   {
     icon: ShieldCheck,
-    title: "Human-in-the-Loop",
+    label: "Supervised Autonomy",
+    labelAccent: "You Can Trust",
     description:
-      "Choose your comfort level: approve every action before it runs, set guardrails and let agents operate within bounds, or go fully autonomous.",
+      "All actions operate within user-defined guardrails. Outputs are transparent, auditable, and designed for human review.",
   },
 ]
 
@@ -52,7 +30,7 @@ export function AICoworkersFeatures() {
       <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
         <div className="mb-12 text-center">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
-            What They Do
+            The Power of AI-Driven Cloud Efficiency
           </p>
           <h2
             className="mx-auto mt-3 max-w-3xl text-balance text-foreground"
@@ -63,17 +41,23 @@ export function AICoworkersFeatures() {
               fontWeight: 700,
             }}
           >
-            From Detection to Remediation, Autonomously
+            Beyond Automation: Intelligence with Context
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-neutral-500">
+            AI Co-workers combine execution with intelligence — applying
+            context-aware reasoning to keep cloud efficiency moving
+            continuously. They don&apos;t just automate tasks; they understand
+            what matters, when to act, and how to communicate.
+          </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-          {FEATURES.map((f, i) => (
+        <div className="grid gap-8 md:grid-cols-3">
+          {PILLARS.map((p, i) => (
             <div
               key={i}
               className="rounded-sm border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-md"
             >
-              <f.icon className="h-6 w-6 text-[#0000EE]" />
+              <p.icon className="h-6 w-6 text-[#0000EE]" />
               <h3
                 className="mt-4 font-bold text-foreground"
                 style={{
@@ -81,10 +65,12 @@ export function AICoworkersFeatures() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                {f.title}
+                {p.label}
+                <br />
+                <span className="text-[#0000EE]">{p.labelAccent}</span>
               </h3>
               <p className="mt-4 text-[15px] leading-relaxed text-neutral-500">
-                {f.description}
+                {p.description}
               </p>
             </div>
           ))}
