@@ -32,22 +32,17 @@ const PRODUCT_COLUMNS = [
 ]
 
 const RESOURCES_LINKS = [
-  { label: "Latest", href: `${BASE}/resources` },
-  { label: "Blog", href: `${BASE}/blog` },
+  { label: "Blog", href: "/blog", internal: true },
+  { label: "Case Studies", href: "/case-studies", internal: true },
+  { label: "Press Releases", href: "/press", internal: true },
   { label: "Videos", href: `${BASE}/resources#videos` },
-  { label: "Whitepapers", href: `${BASE}/resources#whitepapers` },
-  { label: "Case Studies", href: `${BASE}/resources#case-studies` },
-  { label: "Solution Briefs", href: `${BASE}/resources#solution-briefs` },
-  { label: "Newsletters", href: `${BASE}/resources#newsletters` },
-  { label: "Press Release", href: `${BASE}/resources#press` },
   { label: "Knowledge Base", href: `${BASE}/knowledge-base` },
 ]
 
 const COMPANY_LINKS = [
-  { label: "About Us", href: `${BASE}/about` },
-  { label: "Contact Us", href: `${BASE}/contact` },
-  { label: "Careers", href: `${BASE}/careers` },
-  { label: "News", href: `${BASE}/news` },
+  { label: "About Us", href: "/about", internal: true },
+  { label: "Careers", href: "/careers", internal: true },
+  { label: "Contact Us", href: "/contact", internal: true },
 ]
 
 const MEGA_PANEL_CLASS =
@@ -91,7 +86,17 @@ function NavLink({
   )
 }
 
-function MegaLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MegaLink({ href, children, internal }: { href: string; children: React.ReactNode; internal?: boolean }) {
+  if (internal) {
+    return (
+      <Link
+        href={href}
+        className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
+      >
+        {children}
+      </Link>
+    )
+  }
   return (
     <NavLink
       href={href}
@@ -200,17 +205,11 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
               if (open) { setProductOpen(false); setCompanyOpen(false) }
             }}
           >
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {[0, 1, 2].map((i) => (
-                <div key={i}>
-                  <ul className="flex flex-col gap-0">
-                    {RESOURCES_LINKS.slice(i * 3, i * 3 + 3).map((item) => (
-                      <li key={item.label}>
-                        <MegaLink href={item.href}>{item.label}</MegaLink>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {RESOURCES_LINKS.map((item) => (
+                <MegaLink key={item.label} href={item.href} internal={"internal" in item && (item as { internal?: boolean }).internal}>
+                  {item.label}
+                </MegaLink>
               ))}
             </div>
           </MegaMenuTrigger>
@@ -226,7 +225,7 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
           >
             <div className="grid gap-6 sm:grid-cols-2">
               {COMPANY_LINKS.map((item) => (
-                <MegaLink key={item.label} href={item.href}>
+                <MegaLink key={item.label} href={item.href} internal={"internal" in item && (item as { internal?: boolean }).internal}>
                   {item.label}
                 </MegaLink>
               ))}
@@ -237,9 +236,9 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             Pricing
           </Link>
 
-          <NavLink href={`${BASE}/contact`} className={linkClass}>
-            Contact
-          </NavLink>
+          <Link href="/guarantee" className={linkClass}>
+            Guarantee
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
@@ -308,31 +307,53 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Resources
                   </p>
-                  {RESOURCES_LINKS.map((item) => (
-                    <NavLink
-                      key={item.label}
-                      href={item.href}
-                      className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
+                  {RESOURCES_LINKS.map((item) =>
+                    "internal" in item && (item as { internal?: boolean }).internal ? (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <NavLink
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </NavLink>
+                    )
+                  )}
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Company
                   </p>
-                  {COMPANY_LINKS.map((item) => (
-                    <NavLink
-                      key={item.label}
-                      href={item.href}
-                      className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
+                  {COMPANY_LINKS.map((item) =>
+                    "internal" in item && (item as { internal?: boolean }).internal ? (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <NavLink
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </NavLink>
+                    )
+                  )}
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
-                    Pricing
+                    More
                   </p>
                   <Link
                     href="/pricing"
@@ -342,6 +363,13 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                     Pricing
                   </Link>
                   <Link
+                    href="/guarantee"
+                    className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    48-Hour Guarantee
+                  </Link>
+                  <Link
                     href="/net-zero"
                     className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
                     onClick={() => setMobileOpen(false)}
@@ -349,13 +377,6 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                     Net Zero Offer
                   </Link>
                   <div className="mt-4 border-t border-white/10 pt-4">
-                    <NavLink
-                      href={`${BASE}/contact`}
-                      className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Contact
-                    </NavLink>
                     <NavLink
                       href={`${BASE}/login`}
                       className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"

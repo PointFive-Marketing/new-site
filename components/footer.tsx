@@ -18,18 +18,17 @@ const SOLUTIONS_LINKS = [
 ]
 
 const RESOURCES_LINKS = [
-  { label: "Blog", href: `${BASE}/blog` },
-  { label: "Case Studies", href: `${BASE}/resources#case-studies` },
+  { label: "Blog", href: "/blog", internal: true },
+  { label: "Case Studies", href: "/case-studies", internal: true },
+  { label: "Press Releases", href: "/press", internal: true },
   { label: "Videos", href: `${BASE}/resources#videos` },
-  { label: "Whitepapers", href: `${BASE}/resources#whitepapers` },
   { label: "Knowledge Base", href: `${BASE}/knowledge-base` },
 ]
 
 const COMPANY_LINKS = [
-  { label: "About Us", href: `${BASE}/about` },
-  { label: "Careers", href: `${BASE}/careers` },
-  { label: "Contact Us", href: `${BASE}/contact` },
-  { label: "News", href: `${BASE}/news` },
+  { label: "About Us", href: "/about", internal: true },
+  { label: "Careers", href: "/careers", internal: true },
+  { label: "Contact Us", href: "/contact", internal: true },
 ]
 
 function FooterLink({
