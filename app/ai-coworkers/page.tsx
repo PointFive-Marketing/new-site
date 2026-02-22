@@ -1,6 +1,9 @@
 import { AICoworkersHero } from "@/components/ai-coworkers/ai-coworkers-hero"
+import { AICoworkersHowItWorks } from "@/components/ai-coworkers/ai-coworkers-how-it-works"
 import { AICoworkersFeatures } from "@/components/ai-coworkers/ai-coworkers-features"
+import { AICoworkersUseCases } from "@/components/ai-coworkers/ai-coworkers-use-cases"
 import { AICoworkersTrust } from "@/components/ai-coworkers/ai-coworkers-trust"
+import { AICoworkersFaq } from "@/components/ai-coworkers/ai-coworkers-faq"
 import { AICoworkersCta } from "@/components/ai-coworkers/ai-coworkers-cta"
 import { Footer } from "@/components/footer"
 
@@ -14,8 +17,11 @@ export default function AICoworkersPage() {
   return (
     <main>
       <AICoworkersHero />
+      <AICoworkersHowItWorks />
       <AICoworkersFeatures />
+      <AICoworkersUseCases />
       <AICoworkersTrust />
+      <AICoworkersFaq />
       <AICoworkersCta />
       <Footer />
     </main>

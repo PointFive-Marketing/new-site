@@ -1,6 +1,13 @@
-import { Brain, FileText, ShieldCheck } from "lucide-react"
+import { Brain, FileText, ShieldCheck, MessageCircle, Mail, Workflow } from "lucide-react"
 
 const PILLARS = [
+  {
+    icon: MessageCircle,
+    label: "Conversational Setup,",
+    labelAccent: "No Code Required",
+    description:
+      "Describe what you need in plain language. The AI translates your intent into structured queries, validates against your real data, and builds the workflow — no dashboards to configure.",
+  },
   {
     icon: Brain,
     label: "Intelligent Judgment,",
@@ -20,7 +27,21 @@ const PILLARS = [
     label: "Supervised Autonomy",
     labelAccent: "You Can Trust",
     description:
-      "All actions operate within user-defined guardrails. Outputs are transparent, auditable, and designed for human review.",
+      "All actions operate within user-defined guardrails. Human approval is required before any Co-worker goes live — AI assists, humans decide.",
+  },
+  {
+    icon: Mail,
+    label: "Delivers Where",
+    labelAccent: "Your Team Works",
+    description:
+      "Results arrive via email or Slack — channels or DMs. No new tool to adopt. Co-workers meet your team in the tools they already use.",
+  },
+  {
+    icon: Workflow,
+    label: "Full Opportunity",
+    labelAccent: "Lifecycle Coverage",
+    description:
+      "From discovery to assignment to status tracking to reporting — Co-workers cover the entire optimization lifecycle end to end.",
   },
 ]
 
@@ -41,17 +62,17 @@ export function AICoworkersFeatures() {
               fontWeight: 700,
             }}
           >
-            Beyond Automation: Intelligence with Context
+            Your Cloud Cost Data Works for You
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-neutral-500">
-            AI Co-workers combine execution with intelligence — applying
-            context-aware reasoning to keep cloud efficiency moving
-            continuously. They don&apos;t just automate tasks; they understand
-            what matters, when to act, and how to communicate.
+            FinOps teams are drowning in data but starved for action. AI
+            Co-workers deploy autonomous agents that run on your schedule,
+            querying your cloud cost data, analyzing what matters, and
+            delivering results to the people who need to act.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((p, i) => (
             <div
               key={i}
