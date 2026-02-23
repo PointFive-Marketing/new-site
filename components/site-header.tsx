@@ -24,8 +24,16 @@ const PRODUCT_COLUMNS = [
     links: [
       { label: "Product Overview", href: "/product", internal: true },
       { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
-      { label: "AI Engine", href: "/ai", internal: true },
-      { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
+    ],
+    subgroups: [
+      {
+        title: "AI",
+        links: [
+          { label: "AI in Product", href: "/ai", internal: true },
+          { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
+          { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true },
+        ],
+      },
     ],
   },
   {
@@ -198,6 +206,29 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                       </li>
                     ))}
                   </ul>
+                  {"subgroups" in col && col.subgroups?.map((sub) => (
+                    <div key={sub.title} className="mt-4">
+                      <p className="mb-1 px-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[#B4B4D0]/50">
+                        {sub.title}
+                      </p>
+                      <ul className="flex flex-col gap-0">
+                        {sub.links.map((item) => (
+                          <li key={item.label}>
+                            {"internal" in item && item.internal ? (
+                              <Link
+                                href={item.href}
+                                className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
+                              >
+                                {item.label}
+                              </Link>
+                            ) : (
+                              <MegaLink href={item.href}>{item.label}</MegaLink>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
@@ -286,7 +317,10 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                   <p className="mb-1 mt-2 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Product
                   </p>
-                  {PRODUCT_COLUMNS.flatMap((col) => col.links).map((item) =>
+                  {PRODUCT_COLUMNS.flatMap((col) => [
+                    ...col.links,
+                    ...("subgroups" in col && col.subgroups ? col.subgroups.flatMap((sub) => sub.links) : []),
+                  ]).map((item) =>
                     "internal" in item && item.internal ? (
                       <Link
                         key={item.label}

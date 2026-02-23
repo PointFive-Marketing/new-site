@@ -44,7 +44,7 @@ export function AiCostHero() {
             >
               Your AI Costs Are Growing{" "}
               <em className="font-bold italic text-[#7eb8ff]">Faster</em> Than
-              Your Visibility.
+              Your Visibility and Efficiency Efforts.
             </h1>
 
             <p className="mt-6 max-w-2xl text-pretty text-[17px] leading-relaxed text-[#B4B4D0]">
