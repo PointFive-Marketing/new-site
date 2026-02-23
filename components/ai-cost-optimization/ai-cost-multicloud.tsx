@@ -1,13 +1,4 @@
-"use client"
-
-import { useState } from "react"
 import Image from "next/image"
-import { Search } from "lucide-react"
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog"
 
 const PROVIDERS = [
   {
@@ -46,8 +37,6 @@ const PROVIDERS = [
 ]
 
 export function AiCostMulticloud() {
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-
   return (
     <section className="relative overflow-hidden bg-neutral-50">
       <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
@@ -72,67 +61,6 @@ export function AiCostMulticloud() {
             no fragmented views, no manual reconciliation.
           </p>
         </div>
-
-        {/* Unified Cost Analysis Dashboard with lightbox */}
-        <div className="group mt-12">
-          <button
-            type="button"
-            onClick={() => setLightboxOpen(true)}
-            className="relative w-full overflow-hidden rounded-lg border border-border bg-white shadow-lg transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="View full cost analysis dashboard"
-          >
-            <div className="border-b border-border bg-neutral-50 px-6 py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-1.5">
-                  <span className="h-3 w-3 rounded-full bg-red-400" />
-                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                  <span className="h-3 w-3 rounded-full bg-green-400" />
-                </div>
-                <p className="text-xs font-medium text-neutral-400">
-                  PointFive — Unified Cloud Cost Analysis
-                </p>
-              </div>
-            </div>
-            <div className="p-2">
-              <Image
-                src="/images/ai-cost/cost-analysis.png"
-                alt="PointFive unified cloud cost analysis dashboard showing daily spend breakdown across services with stacked bar chart visualization"
-                width={1160}
-                height={600}
-                className="w-full rounded"
-                quality={90}
-              />
-            </div>
-            {/* Magnifying glass overlay on hover */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/20">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-neutral-800 shadow-lg opacity-0 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
-                <Search className="h-6 w-6" aria-hidden />
-              </span>
-            </div>
-          </button>
-        </div>
-
-        {/* Lightbox */}
-        <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-          <DialogContent
-            className="max-h-[90vh] max-w-[95vw] overflow-auto rounded-lg bg-white p-0 sm:max-w-[1100px]"
-            showCloseButton={true}
-          >
-            <DialogTitle className="sr-only">
-              PointFive Unified Cloud Cost Analysis Dashboard
-            </DialogTitle>
-            <div className="p-2">
-              <Image
-                src="/images/ai-cost/cost-analysis.png"
-                alt="PointFive unified cloud cost analysis dashboard showing daily spend breakdown across services with stacked bar chart visualization"
-                width={1440}
-                height={900}
-                className="w-full rounded"
-                quality={95}
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
 
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {PROVIDERS.map((provider) => (
