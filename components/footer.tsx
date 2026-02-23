@@ -7,14 +7,10 @@ const DEMO_URL = "https://www.pointfive.co/request-demo"
 const PRODUCT_LINKS = [
   { label: "Product Overview", href: "/product", internal: true },
   { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
-  { label: "AI Engine", href: "/ai", internal: true },
+  { label: "AI in Product", href: "/ai", internal: true },
   { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
+  { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true },
   { label: "Pricing", href: "/pricing", internal: true },
-]
-
-const SOLUTIONS_LINKS = [
-  { label: "48-Hour Guarantee", href: "/guarantee", internal: true },
-  { label: "Net Zero Cloud Costs", href: "/net-zero", internal: true },
 ]
 
 const RESOURCES_LINKS = [
@@ -119,9 +115,8 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          <nav className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-10">
+          <nav className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10">
             <FooterColumn title="Product" links={PRODUCT_LINKS} />
-            <FooterColumn title="Solutions" links={SOLUTIONS_LINKS} />
             <FooterColumn title="Resources" links={RESOURCES_LINKS} />
             <FooterColumn title="Company" links={COMPANY_LINKS} />
           </nav>

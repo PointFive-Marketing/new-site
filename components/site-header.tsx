@@ -36,14 +36,7 @@ const PRODUCT_COLUMNS = [
       },
     ],
   },
-  {
-    title: "Solutions",
-    links: [
-      { label: "48-Hour Guarantee", href: "/guarantee", internal: true },
-      { label: "Net Zero Cloud Costs", href: "/net-zero", internal: true },
-      { label: "Pricing", href: "/pricing", internal: true },
-    ],
-  },
+  // Solutions column hidden for now — links still accessible in mobile "More" section
 ]
 
 const RESOURCES_LINKS = [
@@ -270,9 +263,6 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             </div>
           </MegaMenuTrigger>
 
-          <Link href="/net-zero" className={linkClass}>
-            Net Zero
-          </Link>
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
