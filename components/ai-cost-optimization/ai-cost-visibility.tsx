@@ -1,5 +1,4 @@
 import { Check } from "lucide-react"
-import { ProductScreenshot } from "./product-screenshot"
 
 const CAPABILITIES = [
   {
@@ -21,6 +20,40 @@ const CAPABILITIES = [
     title: "Cost Driver Analysis",
     description:
       "Identify which models, token patterns, inference endpoints, and supporting infrastructure are responsible for cost growth.",
+  },
+]
+
+/* ── Simulated data for the UI panels ────────────────────────────────── */
+
+const costSummary = {
+  totalMonthly: "$4,260.62",
+  totalResources: "11,257",
+  openOpportunities: "8",
+}
+
+const serviceBreakdown = [
+  { service: "SageMaker", resources: 3, cost: "$2,534.40", pct: 60 },
+  { service: "Bedrock", resources: 8, cost: "$1,726.22", pct: 40 },
+]
+
+const topResources = [
+  {
+    name: "voyage-multilingual-2",
+    type: "SageMaker Endpoint",
+    account: "pointfive-prod",
+    cost: "$2,534.40",
+  },
+  {
+    name: "us-west-2-claude-3-opus",
+    type: "Bedrock Inference",
+    account: "pointfive-prod",
+    cost: "$651.94",
+  },
+  {
+    name: "us-west-2-claude-3-sonnet",
+    type: "Bedrock Inference",
+    account: "pointfive-prod",
+    cost: "$411.49",
   },
 ]
 
@@ -64,24 +97,112 @@ export function AiCostVisibility() {
             </ul>
           </div>
 
-          {/* Product screenshots — cropped to show sidebar panels */}
-          <div className="flex flex-col gap-4">
-            <ProductScreenshot
-              src="/images/ai-cost/ai-cloud-costs.png"
-              alt="PointFive AI Cloud Costs Summary — unified view of AI spend across services with cost breakdown by SageMaker and Bedrock"
-              label="AI Cloud Costs Summary"
-              description="$4,260/mo across SageMaker & Bedrock with service-level breakdown"
-              cropFocus="right"
-              previewHeight={280}
-            />
-            <ProductScreenshot
-              src="/images/ai-cost/ai-top-resources.png"
-              alt="Top AI Resources by Cost — SageMaker endpoints, Bedrock Inference Profiles with account-level cost attribution"
-              label="Top AI Resources by Cost"
-              description="Resource-level attribution across accounts and services"
-              cropFocus="right"
-              previewHeight={280}
-            />
+          {/* Custom designed product panels */}
+          <div className="flex flex-col gap-5">
+            {/* AI Cloud Costs Summary Panel */}
+            <div className="overflow-hidden rounded-lg border border-border bg-white shadow-md">
+              <div className="flex items-center justify-between border-b border-border bg-[#f9fafc] px-5 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded bg-primary/10 text-[10px] font-bold text-primary">
+                    AI
+                  </span>
+                  <span className="text-[13px] font-semibold text-foreground">
+                    AI Cloud Costs Summary
+                  </span>
+                </div>
+                <span className="rounded-full bg-[#00E639]/10 px-2 py-0.5 font-mono text-[10px] font-medium text-[#00a82d]">
+                  Live
+                </span>
+              </div>
+              <div className="p-5">
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-wide text-neutral-400">
+                      Monthly AI Spend
+                    </p>
+                    <p className="mt-1 font-mono text-xl font-bold text-foreground">
+                      {costSummary.totalMonthly}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-wide text-neutral-400">
+                      Total AI Resources
+                    </p>
+                    <p className="mt-1 font-mono text-xl font-bold text-foreground">
+                      {costSummary.totalResources}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-wide text-neutral-400">
+                      Open Opportunities
+                    </p>
+                    <p className="mt-1 font-mono text-xl font-bold text-[#00a82d]">
+                      {costSummary.openOpportunities}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
+                    Cost Breakdown by Service
+                  </p>
+                  <div className="space-y-2.5">
+                    {serviceBreakdown.map((svc) => (
+                      <div key={svc.service}>
+                        <div className="flex items-center justify-between text-[12px]">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-foreground">
+                              {svc.service}
+                            </span>
+                            <span className="text-neutral-400">
+                              {svc.resources} resources
+                            </span>
+                          </div>
+                          <span className="font-mono font-semibold text-foreground">
+                            {svc.cost}
+                          </span>
+                        </div>
+                        <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
+                          <div
+                            className="h-full rounded-full bg-primary/70"
+                            style={{ width: `${svc.pct}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Top AI Resources Panel */}
+            <div className="overflow-hidden rounded-lg border border-border bg-white shadow-md">
+              <div className="border-b border-border bg-[#f9fafc] px-5 py-3">
+                <span className="text-[13px] font-semibold text-foreground">
+                  Top AI Resources by Cost
+                </span>
+              </div>
+              <div className="divide-y divide-border">
+                {topResources.map((res) => (
+                  <div
+                    key={res.name}
+                    className="flex items-center justify-between px-5 py-3"
+                  >
+                    <div className="min-w-0">
+                      <p className="truncate text-[12px] font-medium text-foreground">
+                        {res.name}
+                      </p>
+                      <p className="mt-0.5 text-[11px] text-neutral-400">
+                        {res.type} · {res.account}
+                      </p>
+                    </div>
+                    <span className="ml-4 shrink-0 font-mono text-[13px] font-semibold text-foreground">
+                      {res.cost}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
