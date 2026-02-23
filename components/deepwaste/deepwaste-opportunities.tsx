@@ -112,7 +112,7 @@ export function DeepWasteOpportunities() {
               fontWeight: 500,
             }}
           >
-            Showing {MAX_VISIBLE} of {total}+ detections in this category.{" "}
+            This is just 6 sampled opportunities.{" "}
             <a
               href="https://hub.pointfive.co"
               target="_blank"
