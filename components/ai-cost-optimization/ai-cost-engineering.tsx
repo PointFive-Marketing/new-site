@@ -53,7 +53,39 @@ export function AiCostEngineering() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        {/* Product screenshots — Jira + AI Remediation */}
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="overflow-hidden rounded-lg border border-border shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/ai-cost/jira-integration.png"
+              alt="PointFive Jira Integration — create optimization tickets with team assignment directly from opportunities"
+              className="w-full"
+            />
+            <div className="border-t border-border bg-neutral-50 px-6 py-4">
+              <p className="text-sm font-semibold text-foreground">Jira Integration</p>
+              <p className="mt-1 text-xs text-neutral-500">
+                Create tickets with full context, team assignment, and projected savings — directly from any optimization opportunity.
+              </p>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-border shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/ai-cost/ai-remediation.png"
+              alt="PointFive AI Remediation — Fix in Cursor or GitHub Copilot with auto-generated IaC-aligned code"
+              className="w-full"
+            />
+            <div className="border-t border-border bg-neutral-50 px-6 py-4">
+              <p className="text-sm font-semibold text-foreground">AI-Powered Remediation</p>
+              <p className="mt-1 text-xs text-neutral-500">
+                One-click fixes for Cursor, GitHub Copilot, or Windsurf — with auto-generated, IaC-aligned remediation prompts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {FEATURES.map((f) => (
             <div
               key={f.title}

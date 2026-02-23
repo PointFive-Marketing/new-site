@@ -72,6 +72,18 @@ export function AiCostHero() {
               </a>
             </div>
           </div>
+
+          {/* Product screenshot */}
+          <div className="mt-14">
+            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/ai-cost/dashboard-overview.png"
+                alt="PointFive AI Cost Optimization Dashboard — Team Opportunities, Savings Tracking, and Optimization Groups"
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

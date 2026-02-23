@@ -63,46 +63,23 @@ export function AiCostVisibility() {
             </ul>
           </div>
 
-          {/* Feature illustration card */}
-          <div className="flex items-center justify-center">
-            <div className="w-full rounded-lg border border-border bg-neutral-50 p-8">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between rounded-md border border-border bg-white p-4">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">Azure OpenAI</p>
-                    <p className="text-xs text-neutral-500">GPT-4o · 3 deployments</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-bold text-foreground">$42,850</p>
-                    <p className="text-xs text-red-500">+23% MoM</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between rounded-md border border-border bg-white p-4">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">AWS Bedrock</p>
-                    <p className="text-xs text-neutral-500">Claude · 2 deployments</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-bold text-foreground">$28,340</p>
-                    <p className="text-xs text-red-500">+31% MoM</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between rounded-md border border-border bg-white p-4">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">GCP Vertex AI</p>
-                    <p className="text-xs text-neutral-500">Gemini · 1 deployment</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-bold text-foreground">$15,200</p>
-                    <p className="text-xs text-neutral-500">+8% MoM</p>
-                  </div>
-                </div>
-                <div className="mt-4 rounded-md border border-primary/20 bg-primary/5 p-3 text-center">
-                  <p className="text-xs font-medium text-primary">
-                    Total AI Spend: $86,390/mo across 3 providers, 6 deployments, 4 teams
-                  </p>
-                </div>
-              </div>
+          {/* Product screenshots */}
+          <div className="flex flex-col gap-4">
+            <div className="overflow-hidden rounded-lg border border-border shadow-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/ai-cost/ai-cloud-costs.png"
+                alt="PointFive AI Cloud Costs Summary — unified view of AI spend across services and resources"
+                className="w-full"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg border border-border shadow-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/ai-cost/ai-top-resources.png"
+                alt="Top AI Resources by Cost — SageMaker endpoints, Bedrock Inference Profiles with cost attribution"
+                className="w-full"
+              />
             </div>
           </div>
         </div>

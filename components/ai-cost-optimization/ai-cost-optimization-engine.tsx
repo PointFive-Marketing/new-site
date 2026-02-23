@@ -56,6 +56,34 @@ export function AiCostOptimizationEngine() {
           that generic cost tools miss entirely.
         </p>
 
+        {/* Product screenshots row */}
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/ai-cost/ai-key-insights.png"
+              alt="PointFive Key Insights — AI-generated analysis of SageMaker and Bedrock cost patterns"
+              className="w-full"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/ai-cost/ai-recommendations.png"
+              alt="PointFive Recommendations — SageMaker Endpoint Review and Bedrock Model Selection optimization"
+              className="w-full"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/ai-cost/ai-rightsizing.png"
+              alt="PointFive Right-Sizing Review — instance optimization with auto-scaling recommendations"
+              className="w-full"
+            />
+          </div>
+        </div>
+
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           {OPTIMIZATIONS.map((opt) => (
             <div

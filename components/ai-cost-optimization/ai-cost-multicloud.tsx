@@ -1,6 +1,9 @@
+import Image from "next/image"
+
 const PROVIDERS = [
   {
     name: "Azure OpenAI",
+    icon: "/icons/pf/logo-azure.svg",
     services: "GPT-4o, GPT-4, o1, o3",
     capabilities: [
       "PTU vs. PAYG optimization",
@@ -11,6 +14,7 @@ const PROVIDERS = [
   },
   {
     name: "AWS Bedrock",
+    icon: "/icons/pf/logo-aws.svg",
     services: "Claude, Titan, Llama, Mistral",
     capabilities: [
       "Cross-model cost comparison",
@@ -21,6 +25,7 @@ const PROVIDERS = [
   },
   {
     name: "GCP Vertex AI",
+    icon: "/icons/pf/logo-gcp.svg",
     services: "Gemini, PaLM, custom models",
     capabilities: [
       "Prediction endpoint utilization",
@@ -57,24 +62,62 @@ export function AiCostMulticloud() {
           </p>
         </div>
 
+        {/* Unified Cost Analysis Dashboard */}
+        <div className="mt-12 overflow-hidden rounded-lg border border-border bg-white shadow-lg">
+          <div className="border-b border-border bg-neutral-50 px-6 py-3">
+            <div className="flex items-center gap-3">
+              <div className="flex gap-1.5">
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                <span className="h-3 w-3 rounded-full bg-green-400" />
+              </div>
+              <p className="text-xs font-medium text-neutral-400">
+                PointFive — Unified Cloud Cost Analysis
+              </p>
+            </div>
+          </div>
+          <div className="p-2">
+            <Image
+              src="/images/ai-cost/cost-analysis.png"
+              alt="PointFive unified cloud cost analysis dashboard showing daily spend breakdown across services with stacked bar chart visualization"
+              width={1160}
+              height={600}
+              className="w-full rounded"
+              quality={90}
+            />
+          </div>
+        </div>
+
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {PROVIDERS.map((provider) => (
             <div
               key={provider.name}
               className="rounded-sm border border-border bg-white p-8 transition-shadow hover:shadow-md"
             >
-              <h3
-                className="font-bold text-foreground"
-                style={{
-                  fontSize: "clamp(18px, 2vw, 22px)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {provider.name}
-              </h3>
-              <p className="mt-1 text-sm text-neutral-500">
-                {provider.services}
-              </p>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100">
+                  <Image
+                    src={provider.icon}
+                    alt={`${provider.name} logo`}
+                    width={24}
+                    height={24}
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="font-bold text-foreground"
+                    style={{
+                      fontSize: "clamp(18px, 2vw, 22px)",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {provider.name}
+                  </h3>
+                  <p className="text-xs text-neutral-500">
+                    {provider.services}
+                  </p>
+                </div>
+              </div>
               <ul className="mt-6 space-y-3">
                 {provider.capabilities.map((cap) => (
                   <li
