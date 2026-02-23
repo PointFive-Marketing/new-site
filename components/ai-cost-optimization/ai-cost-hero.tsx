@@ -1,9 +1,20 @@
-import { ArrowRight } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { ArrowRight, Search } from "lucide-react"
+import Image from "next/image"
 import { SiteHeader } from "@/components/site-header"
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog"
 
 const DEMO_URL = "https://www.pointfive.co/request-demo"
 
 export function AiCostHero() {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   return (
     <section className="relative overflow-hidden bg-[#0A0A1A]">
       <div
@@ -73,19 +84,54 @@ export function AiCostHero() {
             </div>
           </div>
 
-          {/* Product screenshot */}
-          <div className="mt-14">
-            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+          {/* Product screenshot with lightbox */}
+          <div className="group mt-14">
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(true)}
+              className="relative w-full overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10 transition-all duration-300 hover:border-white/20 hover:shadow-[#0000EE]/20 focus:outline-none focus:ring-2 focus:ring-[#0000EE] focus:ring-offset-2 focus:ring-offset-[#0A0A1A]"
+              aria-label="View full dashboard screenshot"
+            >
+              <Image
                 src="/images/ai-cost/dashboard-overview.png"
                 alt="PointFive AI Cost Optimization Dashboard — Team Opportunities, Savings Tracking, and Optimization Groups"
+                width={1200}
+                height={700}
                 className="w-full"
+                quality={90}
               />
-            </div>
+              {/* Magnifying glass overlay on hover */}
+              <div className="absolute inset-0 flex items-center justify-center bg-[#0A0A1A]/0 transition-all duration-300 group-hover:bg-[#0A0A1A]/30">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#0A0A1A] shadow-lg opacity-0 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100">
+                  <Search className="h-6 w-6" aria-hidden />
+                </span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent
+          className="max-h-[90vh] max-w-[95vw] overflow-auto rounded-lg bg-white p-0 sm:max-w-[1100px]"
+          showCloseButton={true}
+        >
+          <DialogTitle className="sr-only">
+            PointFive AI Cost Optimization Dashboard
+          </DialogTitle>
+          <div className="p-2">
+            <Image
+              src="/images/ai-cost/dashboard-overview.png"
+              alt="PointFive AI Cost Optimization Dashboard — Team Opportunities, Savings Tracking, and Optimization Groups"
+              width={1440}
+              height={900}
+              className="w-full rounded"
+              quality={95}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

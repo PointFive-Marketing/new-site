@@ -1,4 +1,5 @@
 import { Check } from "lucide-react"
+import { ProductScreenshot } from "./product-screenshot"
 
 const CAPABILITIES = [
   {
@@ -63,24 +64,24 @@ export function AiCostVisibility() {
             </ul>
           </div>
 
-          {/* Product screenshots */}
+          {/* Product screenshots — cropped to show sidebar panels */}
           <div className="flex flex-col gap-4">
-            <div className="overflow-hidden rounded-lg border border-border shadow-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/ai-cost/ai-cloud-costs.png"
-                alt="PointFive AI Cloud Costs Summary — unified view of AI spend across services and resources"
-                className="w-full"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg border border-border shadow-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/ai-cost/ai-top-resources.png"
-                alt="Top AI Resources by Cost — SageMaker endpoints, Bedrock Inference Profiles with cost attribution"
-                className="w-full"
-              />
-            </div>
+            <ProductScreenshot
+              src="/images/ai-cost/ai-cloud-costs.png"
+              alt="PointFive AI Cloud Costs Summary — unified view of AI spend across services with cost breakdown by SageMaker and Bedrock"
+              label="AI Cloud Costs Summary"
+              description="$4,260/mo across SageMaker & Bedrock with service-level breakdown"
+              cropFocus="right"
+              previewHeight={280}
+            />
+            <ProductScreenshot
+              src="/images/ai-cost/ai-top-resources.png"
+              alt="Top AI Resources by Cost — SageMaker endpoints, Bedrock Inference Profiles with account-level cost attribution"
+              label="Top AI Resources by Cost"
+              description="Resource-level attribution across accounts and services"
+              cropFocus="right"
+              previewHeight={280}
+            />
           </div>
         </div>
       </div>

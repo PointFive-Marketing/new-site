@@ -1,3 +1,5 @@
+import { ProductScreenshot } from "./product-screenshot"
+
 const OPTIMIZATIONS = [
   {
     title: "PTU vs. PAYG Rightsizing",
@@ -56,32 +58,35 @@ export function AiCostOptimizationEngine() {
           that generic cost tools miss entirely.
         </p>
 
-        {/* Product screenshots row */}
+        {/* Product screenshots — cropped to sidebar panels */}
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/ai-cost/ai-key-insights.png"
-              alt="PointFive Key Insights — AI-generated analysis of SageMaker and Bedrock cost patterns"
-              className="w-full"
-            />
-          </div>
-          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/ai-cost/ai-recommendations.png"
-              alt="PointFive Recommendations — SageMaker Endpoint Review and Bedrock Model Selection optimization"
-              className="w-full"
-            />
-          </div>
-          <div className="overflow-hidden rounded-lg border border-white/10 shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/ai-cost/ai-rightsizing.png"
-              alt="PointFive Right-Sizing Review — instance optimization with auto-scaling recommendations"
-              className="w-full"
-            />
-          </div>
+          <ProductScreenshot
+            src="/images/ai-cost/ai-key-insights.png"
+            alt="PointFive Key Insights — AI-generated analysis showing SageMaker spending patterns and Bedrock model recommendations"
+            label="AI Key Insights"
+            description="Automated analysis of SageMaker & Bedrock cost patterns"
+            cropFocus="right"
+            previewHeight={300}
+            dark
+          />
+          <ProductScreenshot
+            src="/images/ai-cost/ai-recommendations.png"
+            alt="PointFive SageMaker Endpoint Deep Dive — configuration details, monthly cost, and auto-scaling analysis"
+            label="Endpoint Deep Dive"
+            description="Configuration analysis with instance-level cost attribution"
+            cropFocus="right"
+            previewHeight={300}
+            dark
+          />
+          <ProductScreenshot
+            src="/images/ai-cost/ai-rightsizing.png"
+            alt="PointFive Optimization Opportunities — auto-scaling recommendations with traffic pattern analysis and savings potential"
+            label="Optimization Opportunities"
+            description="Right-sizing with traffic-aware recommendations"
+            cropFocus="right"
+            previewHeight={300}
+            dark
+          />
         </div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-2">

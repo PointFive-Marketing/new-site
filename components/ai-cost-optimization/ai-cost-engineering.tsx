@@ -1,4 +1,5 @@
 import { Terminal, GitBranch, Users, BarChart3 } from "lucide-react"
+import { ProductScreenshot } from "./product-screenshot"
 
 const FEATURES = [
   {
@@ -53,36 +54,24 @@ export function AiCostEngineering() {
           </p>
         </div>
 
-        {/* Product screenshots — Jira + AI Remediation */}
+        {/* Product screenshots — Jira + AI Remediation modals */}
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          <div className="overflow-hidden rounded-lg border border-border shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/ai-cost/jira-integration.png"
-              alt="PointFive Jira Integration — create optimization tickets with team assignment directly from opportunities"
-              className="w-full"
-            />
-            <div className="border-t border-border bg-neutral-50 px-6 py-4">
-              <p className="text-sm font-semibold text-foreground">Jira Integration</p>
-              <p className="mt-1 text-xs text-neutral-500">
-                Create tickets with full context, team assignment, and projected savings — directly from any optimization opportunity.
-              </p>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-lg border border-border shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/ai-cost/ai-remediation.png"
-              alt="PointFive AI Remediation — Fix in Cursor or GitHub Copilot with auto-generated IaC-aligned code"
-              className="w-full"
-            />
-            <div className="border-t border-border bg-neutral-50 px-6 py-4">
-              <p className="text-sm font-semibold text-foreground">AI-Powered Remediation</p>
-              <p className="mt-1 text-xs text-neutral-500">
-                One-click fixes for Cursor, GitHub Copilot, or Windsurf — with auto-generated, IaC-aligned remediation prompts.
-              </p>
-            </div>
-          </div>
+          <ProductScreenshot
+            src="/images/ai-cost/jira-integration.png"
+            alt="PointFive Jira Integration — create optimization tickets with team assignment directly from savings opportunities"
+            label="Jira Integration"
+            description="Create tickets with full context, team assignment, and projected savings — directly from any opportunity."
+            cropFocus="center"
+            previewHeight={340}
+          />
+          <ProductScreenshot
+            src="/images/ai-cost/ai-remediation.png"
+            alt="PointFive AI Remediation — Fix in Cursor or GitHub Copilot with auto-generated IaC-aligned remediation prompts"
+            label="AI-Powered Remediation"
+            description="One-click fixes for Cursor, GitHub Copilot, or Windsurf — with auto-generated, IaC-aligned prompts."
+            cropFocus="center"
+            previewHeight={340}
+          />
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
