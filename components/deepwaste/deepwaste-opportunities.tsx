@@ -1,7 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { OPPORTUNITY_CARDS, type OppProvider } from "@/lib/deepwaste-data"
+
+const MAX_VISIBLE = 6
 
 const PROVIDER_LABELS: Record<OppProvider, string> = {
   aws: "AWS",
@@ -13,10 +15,10 @@ const PROVIDER_LABELS: Record<OppProvider, string> = {
 }
 
 const TABS = [
-  { id: "all", label: "All" },
   { id: "quick", label: "Quick Wins" },
   { id: "deep", label: "Deep Waste" },
   { id: "common", label: "Most Common" },
+  { id: "ai", label: "AI" },
   { id: "aws", label: "AWS" },
   { id: "azure", label: "Azure" },
   { id: "gcp", label: "GCP" },
@@ -24,7 +26,17 @@ const TABS = [
 ] as const
 
 export function DeepWasteOpportunities() {
-  const [filter, setFilter] = useState<string>("all")
+  const [filter, setFilter] = useState<string>("quick")
+
+  const { visible, total } = useMemo(() => {
+    const matching = OPPORTUNITY_CARDS.filter((card) =>
+      card.cats.includes(filter as (typeof card.cats)[number])
+    )
+    return {
+      visible: matching.slice(0, MAX_VISIBLE),
+      total: matching.length,
+    }
+  }, [filter])
 
   return (
     <section className="showcase" id="opportunities">
@@ -58,41 +70,59 @@ export function DeepWasteOpportunities() {
           ))}
         </div>
         <div className="opp-grid" id="opp-grid">
-          {OPPORTUNITY_CARDS.map((card, i) => {
-            const visible =
-              filter === "all" || card.cats.includes(filter as (typeof card.cats)[number])
-            return (
-              <div
-                key={i}
-                className={`opp-card ${visible ? "visible" : ""}`}
-                data-cats={card.cats.join(",")}
-              >
-                <div className="opp-card-header">
-                  <h4>{card.title}</h4>
-                  <span className={`opp-provider ${card.provider}`}>
-                    {PROVIDER_LABELS[card.provider]}
-                  </span>
-                </div>
-                <p>{card.description}</p>
-                <div className="opp-card-footer">
-                  <div className="opp-tags">
-                    {card.tags.map((t, j) => (
-                      <span
-                        key={j}
-                        className={`opp-tag ${t.highlight ? "highlight" : ""}`}
-                      >
-                        {t.label}
-                      </span>
-                    ))}
-                  </div>
-                  {card.savings && (
-                    <span className="opp-savings">{card.savings}</span>
-                  )}
-                </div>
+          {visible.map((card, i) => (
+            <div
+              key={i}
+              className="opp-card visible"
+              data-cats={card.cats.join(",")}
+            >
+              <div className="opp-card-header">
+                <h4>{card.title}</h4>
+                <span className={`opp-provider ${card.provider}`}>
+                  {PROVIDER_LABELS[card.provider]}
+                </span>
               </div>
-            )
-          })}
+              <p>{card.description}</p>
+              <div className="opp-card-footer">
+                <div className="opp-tags">
+                  {card.tags.map((t, j) => (
+                    <span
+                      key={j}
+                      className={`opp-tag ${t.highlight ? "highlight" : ""}`}
+                    >
+                      {t.label}
+                    </span>
+                  ))}
+                </div>
+                {card.savings && (
+                  <span className="opp-savings">{card.savings}</span>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
+        {total > MAX_VISIBLE && (
+          <p
+            className="opp-sample-note"
+            style={{
+              textAlign: "center",
+              marginTop: 28,
+              fontSize: 14,
+              color: "var(--neutral-300)",
+              fontWeight: 500,
+            }}
+          >
+            Showing {MAX_VISIBLE} of {total}+ detections in this category.{" "}
+            <a
+              href="https://hub.pointfive.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--accent)", textDecoration: "underline" }}
+            >
+              Explore the full catalog →
+            </a>
+          </p>
+        )}
         <div className="callout reveal">
           <div className="callout-icon">
             <svg

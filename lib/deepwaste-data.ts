@@ -6,7 +6,7 @@ export interface OppCard {
   description: string
   tags: { label: string; highlight?: boolean }[]
   savings?: string
-  cats: ("quick" | "deep" | "common" | "aws" | "azure" | "gcp" | "k8s")[]
+  cats: ("quick" | "deep" | "common" | "aws" | "azure" | "gcp" | "k8s" | "ai")[]
 }
 
 export const OPPORTUNITY_CARDS: OppCard[] = [
@@ -173,7 +173,51 @@ export const OPPORTUNITY_CARDS: OppCard[] = [
     description:
       "First AI-native service coverage: detects when provisioned throughput units are underutilized or when workloads can be served by more cost-effective model versions without quality degradation.",
     tags: [{ label: "AI Costs", highlight: true }, { label: "Cognitive Services" }],
-    cats: ["deep", "azure"],
+    cats: ["deep", "azure", "ai"],
+  },
+  {
+    title: "GPU Instance Rightsizing",
+    provider: "aws",
+    description:
+      "Identifies GPU instances (P4d, P5, G5, Inf2) running ML training and inference workloads at low GPU utilization — recommending smaller instance types or spot-based alternatives without impacting throughput.",
+    tags: [{ label: "AI Compute", highlight: true }, { label: "GPU" }],
+    savings: "$420K+ saved",
+    cats: ["quick", "aws", "ai"],
+  },
+  {
+    title: "SageMaker Endpoint Idle Detection",
+    provider: "aws",
+    description:
+      "Detects SageMaker real-time inference endpoints with minimal invocation traffic — candidates for serverless inference, auto-scaling adjustments, or scheduled availability windows.",
+    tags: [{ label: "ML Platform", highlight: true }, { label: "Serverless" }],
+    savings: "$185K+ saved",
+    cats: ["deep", "aws", "ai"],
+  },
+  {
+    title: "Bedrock Provisioned Throughput Waste",
+    provider: "aws",
+    description:
+      "Identifies Amazon Bedrock provisioned throughput commitments where actual token usage falls far below reserved capacity — recommending on-demand pricing or right-sized commitments.",
+    tags: [{ label: "LLM Costs", highlight: true }, { label: "Foundation Models" }],
+    savings: "$95K+ saved",
+    cats: ["deep", "aws", "ai"],
+  },
+  {
+    title: "Vertex AI Training Job Optimization",
+    provider: "gcp",
+    description:
+      "Detects Vertex AI custom training jobs using oversized machine types or running without preemptible/spot instances — common in ML experimentation workflows where cost discipline is often overlooked.",
+    tags: [{ label: "ML Training", highlight: true }, { label: "Spot-Ready" }],
+    cats: ["quick", "gcp", "ai"],
+  },
+  {
+    title: "Azure GPU VM Scheduling",
+    provider: "azure",
+    description:
+      "Identifies Azure NC, ND, and NV-series GPU VMs with low off-hours utilization patterns — candidates for automated start/stop schedules, saving up to 65% on AI/ML development workloads.",
+    tags: [{ label: "Scheduling", highlight: true }, { label: "AI Compute" }],
+    savings: "65% savings",
+    cats: ["quick", "azure", "ai"],
   },
   {
     title: "Snowflake Warehouse Auto-Suspend",
