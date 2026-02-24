@@ -12,6 +12,7 @@ const BLOG_DIR = path.join(process.cwd(), "content/blog")
 const CASE_STUDIES_DIR = path.join(process.cwd(), "content/case-studies")
 const PRESS_DIR = path.join(process.cwd(), "content/press")
 const PRODUCT_RELEASES_DIR = path.join(process.cwd(), "content/product-releases")
+const WHITEPAPERS_DIR = path.join(process.cwd(), "content/whitepapers")
 const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), "content/knowledge-base")
 
 function getPostsFromDir(dir: string): PostMeta[] {
@@ -90,6 +91,35 @@ export function getAllBlogSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return []
   return fs
     .readdirSync(BLOG_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.replace(/\.md$/, ""))
+}
+
+// Filtered blog posts (excludes Newsletter category)
+export function getFilteredBlogPosts(): PostMeta[] {
+  return getAllBlogPosts().filter((p) => p.category !== "Newsletter")
+}
+
+// Blog categories (excludes Newsletter)
+export function getBlogCategories(): string[] {
+  const posts = getFilteredBlogPosts()
+  const cats = new Set(posts.map((p) => p.category).filter(Boolean) as string[])
+  return Array.from(cats).sort()
+}
+
+// Whitepapers
+export function getAllWhitepapers(): PostMeta[] {
+  return getPostsFromDir(WHITEPAPERS_DIR)
+}
+
+export async function getWhitepaper(slug: string): Promise<Post | null> {
+  return getPostFromDir(WHITEPAPERS_DIR, slug)
+}
+
+export function getAllWhitepaperSlugs(): string[] {
+  if (!fs.existsSync(WHITEPAPERS_DIR)) return []
+  return fs
+    .readdirSync(WHITEPAPERS_DIR)
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""))
 }

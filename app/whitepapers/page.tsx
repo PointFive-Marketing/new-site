@@ -1,17 +1,16 @@
-import { getFilteredBlogPosts, getBlogCategories } from "@/lib/blog"
-import { BlogList } from "@/components/blog/blog-list"
+import { getAllWhitepapers } from "@/lib/blog"
+import { BlogCard } from "@/components/blog/blog-card"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 
 export const metadata = {
-  title: "Blog | PointFive",
+  title: "Whitepapers | PointFive",
   description:
-    "Insights on cloud cost optimization, FinOps, and engineering efficiency from the PointFive team.",
+    "In-depth technical guides on cloud cost optimization, FinOps for AI, and infrastructure efficiency from the PointFive team.",
 }
 
-export default function BlogPage() {
-  const posts = getFilteredBlogPosts()
-  const categories = getBlogCategories()
+export default function WhitepapersPage() {
+  const posts = getAllWhitepapers()
 
   return (
     <main>
@@ -21,17 +20,17 @@ export default function BlogPage() {
       <section className="bg-[#0A0A1A] py-16 md:py-20">
         <div className="mx-auto max-w-[1200px] px-6">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
-            Blog
+            Whitepapers
           </p>
           <h1
             className="mt-3 font-bold leading-[1.1] tracking-tight text-white"
             style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
           >
-            Insights &amp; Ideas
+            Technical Deep Dives
           </h1>
           <p className="mt-4 max-w-[500px] text-[16px] leading-relaxed text-[#B4B4D0]">
-            Cloud cost optimization, FinOps best practices, and engineering
-            efficiency — from the team building the platform.
+            In-depth guides on cloud cost optimization, FinOps for AI, and
+            infrastructure efficiency best practices.
           </p>
         </div>
       </section>
@@ -41,10 +40,18 @@ export default function BlogPage() {
         <div className="mx-auto max-w-[1200px] px-6">
           {posts.length === 0 ? (
             <p className="py-20 text-center text-neutral-400">
-              Blog posts coming soon.
+              Whitepapers coming soon.
             </p>
           ) : (
-            <BlogList posts={posts} categories={categories} />
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <BlogCard
+                  key={post.slug}
+                  post={post}
+                  basePath="/whitepapers"
+                />
+              ))}
+            </div>
           )}
         </div>
       </section>

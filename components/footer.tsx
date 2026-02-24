@@ -17,6 +17,7 @@ const RESOURCES_LINKS = [
   { label: "Case Studies", href: "/case-studies", internal: true },
   { label: "Press Releases", href: "/press", internal: true },
   { label: "Product Releases", href: "/product-releases", internal: true },
+  { label: "Whitepapers", href: "/whitepapers", internal: true },
   { label: "Learning", href: "/learning", internal: true },
 ]
 
@@ -24,6 +25,7 @@ const COMPANY_LINKS = [
   { label: "About Us", href: "/about", internal: true },
   { label: "Careers", href: "/careers", internal: true },
   { label: "Contact Us", href: "/contact", internal: true },
+  { label: "Partners", href: "/partners", internal: true },
 ]
 
 function FooterLink({

@@ -7,10 +7,12 @@ export function BlogCard({
   post,
   basePath = "/blog",
   featured = false,
+  onCategoryClick,
 }: {
   post: PostMeta
   basePath?: string
   featured?: boolean
+  onCategoryClick?: (category: string) => void
 }) {
   return (
     <Link
@@ -45,9 +47,23 @@ export function BlogCard({
         {/* Category + date */}
         <div className="flex items-center gap-3">
           {post.category && (
-            <span className="rounded-full bg-[#0000EE]/5 px-2.5 py-0.5 text-[11px] font-semibold text-[#0000EE]">
-              {post.category}
-            </span>
+            onCategoryClick ? (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  onCategoryClick(post.category!)
+                }}
+                className="rounded-full bg-[#0000EE]/5 px-2.5 py-0.5 text-[11px] font-semibold text-[#0000EE] transition-colors hover:bg-[#0000EE]/10"
+              >
+                {post.category}
+              </button>
+            ) : (
+              <span className="rounded-full bg-[#0000EE]/5 px-2.5 py-0.5 text-[11px] font-semibold text-[#0000EE]">
+                {post.category}
+              </span>
+            )
           )}
           <span className="text-[12px] text-neutral-400">
             {formatDate(post.date)}

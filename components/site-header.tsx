@@ -2,7 +2,27 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Layers,
+  Search,
+  Brain,
+  Bot,
+  Cpu,
+  FileText,
+  BarChart3,
+  Megaphone,
+  Rocket,
+  BookOpen,
+  GraduationCap,
+  Building2,
+  Users,
+  Mail,
+  Handshake,
+  type LucideIcon,
+} from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -17,40 +37,54 @@ import {
 const DEMO_URL = "/request-demo"
 const BASE = "https://www.pointfive.co"
 
-// Product: internal /product page; external links for others
-const PRODUCT_COLUMNS = [
+interface NavItem {
+  label: string
+  href: string
+  internal?: boolean
+  icon?: LucideIcon
+  description?: string
+}
+
+interface NavColumn {
+  title: string
+  links: NavItem[]
+  subgroups?: { title: string; links: NavItem[] }[]
+}
+
+const PRODUCT_COLUMNS: NavColumn[] = [
   {
     title: "Platform",
     links: [
-      { label: "Product Overview", href: "/product", internal: true },
-      { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
+      { label: "Product Overview", href: "/product", internal: true, icon: Layers, description: "End-to-end cloud optimization platform" },
+      { label: "DeepWaste Detection", href: "/deepwaste", internal: true, icon: Search, description: "Cyber-inspired waste identification" },
     ],
     subgroups: [
       {
         title: "AI",
         links: [
-          { label: "AI in Product", href: "/ai", internal: true },
-          { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
-          { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true },
+          { label: "AI in Product", href: "/ai", internal: true, icon: Brain, description: "AI-powered recommendations" },
+          { label: "AI Co-Workers", href: "/ai-coworkers", internal: true, icon: Bot, description: "Autonomous optimization agents" },
+          { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true, icon: Cpu, description: "Reduce AI/ML infrastructure costs" },
         ],
       },
     ],
   },
-  // Solutions column hidden for now — links still accessible in mobile "More" section
 ]
 
-const RESOURCES_LINKS = [
-  { label: "Blog", href: "/blog", internal: true },
-  { label: "Case Studies", href: "/case-studies", internal: true },
-  { label: "Press Releases", href: "/press", internal: true },
-  { label: "Product Releases", href: "/product-releases", internal: true },
-  { label: "Learning", href: "/learning", internal: true },
+const RESOURCES_LINKS: NavItem[] = [
+  { label: "Blog", href: "/blog", internal: true, icon: FileText, description: "Insights on FinOps and cloud efficiency" },
+  { label: "Case Studies", href: "/case-studies", internal: true, icon: BarChart3, description: "Real customer optimization stories" },
+  { label: "Press Releases", href: "/press", internal: true, icon: Megaphone, description: "Company announcements" },
+  { label: "Product Releases", href: "/product-releases", internal: true, icon: Rocket, description: "Latest platform updates" },
+  { label: "Whitepapers", href: "/whitepapers", internal: true, icon: BookOpen, description: "In-depth technical guides" },
+  { label: "Learning", href: "/learning", internal: true, icon: GraduationCap, description: "Cloud optimization fundamentals" },
 ]
 
-const COMPANY_LINKS = [
-  { label: "About Us", href: "/about", internal: true },
-  { label: "Careers", href: "/careers", internal: true },
-  { label: "Contact Us", href: "/contact", internal: true },
+const COMPANY_LINKS: NavItem[] = [
+  { label: "About Us", href: "/about", internal: true, icon: Building2, description: "Our mission and team" },
+  { label: "Careers", href: "/careers", internal: true, icon: Users, description: "Join the PointFive team" },
+  { label: "Contact Us", href: "/contact", internal: true, icon: Mail, description: "Get in touch" },
+  { label: "Partners", href: "/partners", internal: true, icon: Handshake, description: "Partner with PointFive" },
 ]
 
 const MEGA_PANEL_CLASS =
@@ -64,7 +98,7 @@ function PointFiveLogo({ className, dark = false }: { className?: string; dark?:
         alt="PointFive"
         width={140}
         height={32}
-        className={dark ? "h-7 w-auto brightness-0 invert" : "h-7 w-auto"}
+        className={dark ? "h-5 w-auto brightness-0 invert" : "h-5 w-auto"}
       />
     </Link>
   )
@@ -94,24 +128,54 @@ function NavLink({
   )
 }
 
-function MegaLink({ href, children, internal }: { href: string; children: React.ReactNode; internal?: boolean }) {
-  if (internal) {
-    return (
-      <Link
-        href={href}
-        className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
-      >
-        {children}
-      </Link>
-    )
+function MegaLink({ item }: { item: NavItem }) {
+  const Icon = item.icon
+  const content = (
+    <div className="flex items-start gap-3 rounded-lg px-2 py-2.5 transition-colors hover:bg-white/[0.06] group/link">
+      {Icon && (
+        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-[#7eb8ff] transition-colors group-hover/link:bg-white/[0.1] group-hover/link:text-white">
+          <Icon className="h-[18px] w-[18px]" />
+        </div>
+      )}
+      <div className="min-w-0">
+        <p className="text-[14px] font-medium text-[#E0E0F0] transition-colors group-hover/link:text-white">
+          {item.label}
+        </p>
+        {item.description && (
+          <p className="mt-0.5 text-[12px] leading-relaxed text-[#8888A8] transition-colors group-hover/link:text-[#B4B4D0]">
+            {item.description}
+          </p>
+        )}
+      </div>
+    </div>
+  )
+
+  if (item.internal) {
+    return <Link href={item.href}>{content}</Link>
   }
   return (
-    <NavLink
-      href={href}
-      className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
-    >
-      {children}
-    </NavLink>
+    <a href={item.href} target="_blank" rel="noopener noreferrer">
+      {content}
+    </a>
+  )
+}
+
+function MobileMegaLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {
+  const Icon = item.icon
+  const content = (
+    <div className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white">
+      {Icon && <Icon className="h-4 w-4 shrink-0 text-[#7eb8ff]" />}
+      <span>{item.label}</span>
+    </div>
+  )
+
+  if (item.internal) {
+    return <Link href={item.href} onClick={onClick}>{content}</Link>
+  }
+  return (
+    <a href={item.href} target="_blank" rel="noopener noreferrer" onClick={onClick}>
+      {content}
+    </a>
   )
 }
 
@@ -120,12 +184,14 @@ function MegaMenuTrigger({
   linkClass,
   open,
   onOpenChange,
+  width,
   children,
 }: {
   label: string
   linkClass: string
   open: boolean
   onOpenChange: (open: boolean) => void
+  width?: string
   children: React.ReactNode
 }) {
   return (
@@ -142,7 +208,7 @@ function MegaMenuTrigger({
       <PopoverContent
         align="start"
         sideOffset={4}
-        className={`w-[min(720px,calc(100vw-2rem))] ${MEGA_PANEL_CLASS}`}
+        className={`${width || "w-[min(480px,calc(100vw-2rem))]"} ${MEGA_PANEL_CLASS}`}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         {children}
@@ -164,7 +230,7 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0A0A1A]/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
-        <PointFiveLogo dark={dark} className="h-7 w-auto" />
+        <PointFiveLogo dark={dark} className="h-5 w-auto" />
 
         {/* Desktop nav with mega menus */}
         <nav className="hidden items-center gap-5 md:flex lg:gap-6">
@@ -177,49 +243,23 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
               if (open) { setResourcesOpen(false); setCompanyOpen(false) }
             }}
           >
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col gap-1">
               {PRODUCT_COLUMNS.map((col) => (
                 <div key={col.title}>
-                  <p className="mb-2 font-mono text-[11px] font-bold uppercase tracking-wider text-[#00E639]">
+                  <p className="mb-1 px-2 font-mono text-[11px] font-bold uppercase tracking-wider text-[#00E639]">
                     {col.title}
                   </p>
-                  <ul className="flex flex-col gap-0">
-                    {col.links.map((item) => (
-                      <li key={item.label}>
-                        {"internal" in item && item.internal ? (
-                          <Link
-                            href={item.href}
-                            className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
-                          >
-                            {item.label}
-                          </Link>
-                        ) : (
-                          <MegaLink href={item.href}>{item.label}</MegaLink>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  {"subgroups" in col && col.subgroups?.map((sub) => (
-                    <div key={sub.title} className="mt-4">
+                  {col.links.map((item) => (
+                    <MegaLink key={item.label} item={item} />
+                  ))}
+                  {col.subgroups?.map((sub) => (
+                    <div key={sub.title} className="mt-3">
                       <p className="mb-1 px-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[#B4B4D0]/50">
                         {sub.title}
                       </p>
-                      <ul className="flex flex-col gap-0">
-                        {sub.links.map((item) => (
-                          <li key={item.label}>
-                            {"internal" in item && item.internal ? (
-                              <Link
-                                href={item.href}
-                                className="block rounded-md px-2 py-2 text-[15px] text-[#B4B4D0] transition-colors hover:bg-white/10 hover:text-white"
-                              >
-                                {item.label}
-                              </Link>
-                            ) : (
-                              <MegaLink href={item.href}>{item.label}</MegaLink>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
+                      {sub.links.map((item) => (
+                        <MegaLink key={item.label} item={item} />
+                      ))}
                     </div>
                   ))}
                 </div>
@@ -231,16 +271,15 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             label="Resources"
             linkClass={linkClass}
             open={resourcesOpen}
+            width="w-[min(560px,calc(100vw-2rem))]"
             onOpenChange={(open) => {
               setResourcesOpen(open)
               if (open) { setProductOpen(false); setCompanyOpen(false) }
             }}
           >
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-1 sm:grid-cols-2">
               {RESOURCES_LINKS.map((item) => (
-                <MegaLink key={item.label} href={item.href} internal={"internal" in item && (item as { internal?: boolean }).internal}>
-                  {item.label}
-                </MegaLink>
+                <MegaLink key={item.label} item={item} />
               ))}
             </div>
           </MegaMenuTrigger>
@@ -249,16 +288,15 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
             label="Company"
             linkClass={linkClass}
             open={companyOpen}
+            width="w-[min(480px,calc(100vw-2rem))]"
             onOpenChange={(open) => {
               setCompanyOpen(open)
               if (open) { setProductOpen(false); setResourcesOpen(false) }
             }}
           >
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-1 sm:grid-cols-2">
               {COMPANY_LINKS.map((item) => (
-                <MegaLink key={item.label} href={item.href} internal={"internal" in item && (item as { internal?: boolean }).internal}>
-                  {item.label}
-                </MegaLink>
+                <MegaLink key={item.label} item={item} />
               ))}
             </div>
           </MegaMenuTrigger>
@@ -309,76 +347,25 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                   </p>
                   {PRODUCT_COLUMNS.flatMap((col) => [
                     ...col.links,
-                    ...("subgroups" in col && col.subgroups ? col.subgroups.flatMap((sub) => sub.links) : []),
-                  ]).map((item) =>
-                    "internal" in item && item.internal ? (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <NavLink
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </NavLink>
-                    )
-                  )}
+                    ...(col.subgroups ? col.subgroups.flatMap((sub) => sub.links) : []),
+                  ]).map((item) => (
+                    <MobileMegaLink key={item.label} item={item} onClick={() => setMobileOpen(false)} />
+                  ))}
+
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Resources
                   </p>
-                  {RESOURCES_LINKS.map((item) =>
-                    "internal" in item && (item as { internal?: boolean }).internal ? (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <NavLink
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </NavLink>
-                    )
-                  )}
+                  {RESOURCES_LINKS.map((item) => (
+                    <MobileMegaLink key={item.label} item={item} onClick={() => setMobileOpen(false)} />
+                  ))}
+
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     Company
                   </p>
-                  {COMPANY_LINKS.map((item) =>
-                    "internal" in item && (item as { internal?: boolean }).internal ? (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <NavLink
-                        key={item.label}
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </NavLink>
-                    )
-                  )}
+                  {COMPANY_LINKS.map((item) => (
+                    <MobileMegaLink key={item.label} item={item} onClick={() => setMobileOpen(false)} />
+                  ))}
+
                   <p className="mb-1 mt-4 px-3 font-mono text-[10px] font-bold uppercase tracking-wider text-[#00E639]">
                     More
                   </p>
