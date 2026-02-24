@@ -1,5 +1,5 @@
 const stats = [
-  { value: "1200%+", label: "Average Customer ROI" },
+  { value: "500%+", label: "Average Customer ROI" },
   { value: "$50M", label: "Total Savings Delivered" },
   { value: "10 days", label: "Fastest Full ROI Achieved" },
   { value: "400+", label: "Optimization Types" },

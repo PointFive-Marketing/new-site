@@ -1,7 +1,7 @@
 const STATS = [
   { value: "+54%", label: "Realized Savings" },
   { value: "-67%", label: "Investigation Time" },
-  { value: "+47%", label: "Time to Resolution" },
+  { value: "Near‑Instant", label: "Agentic Resolution" },
   { value: "Zero", label: "Intrusion" },
 ]
 

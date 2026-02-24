@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react"
 import { productImages } from "@/lib/product-images"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
-const CONTACT_URL = "https://www.pointfive.co/contact"
+const DEMO_URL = "/request-demo"
+const CONTACT_URL = "/contact"
 
 export function ProductEnterpriseCta() {
   return (

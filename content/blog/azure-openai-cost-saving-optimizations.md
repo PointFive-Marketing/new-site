@@ -53,3 +53,9 @@ Recurring traffic patterns and predictable idle windows benefit from automated p
 ## Connecting Cost to Performance
 
 PointFive helps organizations connect cost decisions to performance impact. With a library of over 200 savings opportunities across Kubernetes, serverless, and AI workloads, teams can manage Azure OpenAI spending efficiently without sacrificing outcomes.
+
+---
+
+## Download the Full Whitepaper
+
+This article is adapted from our comprehensive whitepaper **"FinOps for AI: Smarter Azure OpenAI Cost Management"** which includes detailed cost models, architecture diagrams, and step-by-step optimization playbooks. [Book a demo](/request-demo) to receive the full whitepaper and see how PointFive can help optimize your Azure OpenAI costs.

@@ -31,13 +31,13 @@ export function NetZeroRoi() {
                   className="font-bold leading-none"
                   style={{ fontSize: "clamp(36px, 4vw, 52px)" }}
                 >
-                  1200%+
+                  500%+
                 </div>
                 <div className="mt-3 text-[15px] font-medium text-white/80">
                   Average customer ROI across deployments
                 </div>
                 <div className="mt-1 text-[13px] text-white/50">
-                  Based on savings identified vs. platform cost
+                  Our real number is higher — you just wouldn&apos;t believe it
                 </div>
               </div>
               <div className="rounded-lg border border-border bg-card p-6">

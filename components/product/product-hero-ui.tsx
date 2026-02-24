@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 /**
  * Small preview of the dashboard with a magnifying glass overlay.

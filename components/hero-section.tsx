@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 const WEBINAR_URL = "https://hs.pointfive.co/how-nubank-scales-financial-services-with-dynamodb-without-waste"
 
 export function HeroSection() {

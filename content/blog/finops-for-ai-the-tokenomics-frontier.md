@@ -49,3 +49,9 @@ The platform enables several approaches:
 ## The Bottom Line
 
 AI efficiency requires moving beyond total spending toward tokenomics-based management. When your dashboard reflects your actual data assets, "Allocation Magic" becomes your most powerful tool for scaling AI sustainably.
+
+---
+
+## Download the Full Whitepaper
+
+This article is adapted from our whitepaper **"FinOps for AI: Ensure LLM Efficiency From the Start"** which covers token-level cost modeling, efficiency benchmarks, and practical optimization playbooks for AI workloads. [Book a demo](/request-demo) to receive the full whitepaper and explore how PointFive can help you manage LLM economics at scale.

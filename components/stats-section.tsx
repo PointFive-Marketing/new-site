@@ -2,7 +2,7 @@ const stats = [
   { value: "400+", label: "Optimization types" },
   { value: "$50M+", label: "Customer savings" },
   { value: "10 days", label: "To first ROI" },
-  { value: "1200%+", label: "Average ROI" },
+  { value: "500%+", label: "Average ROI", tooltip: "Our actual number is higher — but you wouldn't believe us." },
 ]
 
 export function StatsSection() {

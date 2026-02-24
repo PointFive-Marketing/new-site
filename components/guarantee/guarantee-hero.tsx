@@ -1,7 +1,7 @@
 import { ArrowRight, Check, UtensilsCrossed } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 const WHATS_INCLUDED = [
   {

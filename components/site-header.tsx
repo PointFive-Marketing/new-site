@@ -14,7 +14,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 const BASE = "https://www.pointfive.co"
 
 // Product: internal /product page; external links for others
@@ -43,8 +43,8 @@ const RESOURCES_LINKS = [
   { label: "Blog", href: "/blog", internal: true },
   { label: "Case Studies", href: "/case-studies", internal: true },
   { label: "Press Releases", href: "/press", internal: true },
-  { label: "Videos", href: `${BASE}/resources#videos` },
-  { label: "Knowledge Base", href: `${BASE}/knowledge-base` },
+  { label: "Product Releases", href: "/product-releases", internal: true },
+  { label: "Learning", href: "/learning", internal: true },
 ]
 
 const COMPANY_LINKS = [
@@ -272,12 +272,12 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
           >
             Log in
           </NavLink>
-          <NavLink
+          <Link
             href={DEMO_URL}
             className="rounded-full bg-[#0000EE] px-4 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0000CC] hover:shadow-lg hover:shadow-[#0000EE]/25 sm:px-5"
           >
             Book a Demo
-          </NavLink>
+          </Link>
 
           {/* Mobile menu */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -383,13 +383,6 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                     More
                   </p>
                   <Link
-                    href="/pricing"
-                    className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                  <Link
                     href="/guarantee"
                     className="block rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white"
                     onClick={() => setMobileOpen(false)}
@@ -411,13 +404,13 @@ export function SiteHeader({ dark = true }: { dark?: boolean }) {
                     >
                       Log in
                     </NavLink>
-                    <NavLink
+                    <Link
                       href={DEMO_URL}
                       className="mx-2 mt-3 block rounded-full bg-[#0000EE] py-3 text-center text-sm font-semibold text-white"
                       onClick={() => setMobileOpen(false)}
                     >
                       Book a Demo
-                    </NavLink>
+                    </Link>
                   </div>
                 </nav>
               </div>

@@ -1,4 +1,4 @@
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 export function DeepWasteCta() {
   return (

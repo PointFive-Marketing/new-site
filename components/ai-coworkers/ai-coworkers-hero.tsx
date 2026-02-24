@@ -1,7 +1,7 @@
 import { ArrowRight, Clock, Zap, Users, BellOff, Gauge, BadgeDollarSign } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 const BENEFITS = [
   {

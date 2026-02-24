@@ -39,3 +39,9 @@ This means teams can move from discovering that AI spend is high to understandin
 ## The PointFive Advantage
 
 For organizations scaling AI features across their products, the ability to convert AI from a cost risk into a scalable efficiency advantage is critical. By providing full-stack visibility into GenAI unit economics across every cloud, PointFive enables engineering and finance teams to scale confidently -- knowing exactly what each token, each model, and each deployment costs relative to the value it delivers.
+
+---
+
+## Download the Full Whitepaper
+
+This article is adapted from our whitepaper **"FinOps for AI: Master Your GenAI Unit Economics Across Every Cloud"** which includes cross-cloud comparison frameworks, attribution models, and practical guides for establishing AI cost governance. [Book a demo](/request-demo) to receive the full whitepaper and see how PointFive delivers unified AI cost visibility.

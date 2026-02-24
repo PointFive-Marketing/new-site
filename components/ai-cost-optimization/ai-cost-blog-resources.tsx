@@ -5,42 +5,42 @@ const BLOG_POSTS = [
     title: "Azure OpenAI Cost Saving Optimizations",
     description:
       "Four proven strategies for optimizing Azure OpenAI costs: PTU reservations, quota rightsizing, PAYG shifting, and capacity scheduling.",
-    url: "https://www.pointfive.co/blog/azure-openai-cost-saving-optimizations",
+    url: "/blog/azure-openai-cost-saving-optimizations",
     date: "Feb 11, 2026",
   },
   {
     title: "FinOps for AI: Master Your GenAI Unit Economics Across Every Cloud",
     description:
       "How to achieve unified visibility into AI spend across AWS Bedrock, Azure OpenAI, and GCP Vertex AI in a single platform.",
-    url: "https://www.pointfive.co/blog/finops-for-ai-master-your-genai-unit-economics-across-every-cloud",
+    url: "/blog/finops-for-ai-master-your-genai-unit-economics-across-every-cloud",
     date: "Feb 2, 2026",
   },
   {
     title: "FinOps for AI: The \"Tokenomics\" Frontier",
     description:
       "Why token-level unit economics — not aggregate spend — are the key to sustainable AI cost optimization. Real case studies with 86-99% savings.",
-    url: "https://www.pointfive.co/blog/finops-for-ai-the-tokenomics-frontier",
+    url: "/blog/finops-for-ai-the-tokenomics-frontier",
     date: "Jan 22, 2026",
   },
   {
     title: "FinOps for AI: Cloud Is No Longer Only a Math Problem",
     description:
       "AI cost optimization isn't just about reducing spend. It's about optimizing cost-per-outcome while maintaining quality.",
-    url: "https://www.pointfive.co/blog/finops-for-ai-cloud-is-no-longer-math-problem",
+    url: "/blog/finops-for-ai-cloud-is-no-longer-math-problem",
     date: "Jan 13, 2026",
   },
   {
     title: "The Hidden Economics of Managed LLMs in Azure OpenAI",
     description:
       "How managed LLM pricing hides deployment-level costs, and why Cloud Efficiency Posture Management (CEPM) provides the visibility you need.",
-    url: "https://www.pointfive.co/blog/finops-for-ai-economics-of-managed-llms-in-azure-open-ai",
+    url: "/blog/finops-for-ai-economics-of-managed-llms-in-azure-open-ai",
     date: "Jan 7, 2026",
   },
   {
     title: "The Collapse of Cost Visibility as a Strategy",
     description:
       "Why dashboards and alerts alone fail to drive efficiency. The shift from reporting spend to continuous optimization.",
-    url: "https://www.pointfive.co/blog/the-collapse-of-cost-visibility-as-a-strategy",
+    url: "/blog/the-collapse-of-cost-visibility-as-a-strategy",
     date: "Dec 11, 2025",
   },
 ]

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { type PostMeta, formatDate } from "@/lib/blog"
+import { type PostMeta, formatDate } from "@/lib/blog-types"
 
 export function BlogCard({
   post,

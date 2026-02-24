@@ -40,3 +40,9 @@ This shift from post-hoc bill review to continuous efficiency measurement enable
 ## Moving Forward
 
 As AI adoption accelerates, FinOps practices must evolve to address the unique economics of managed LLM services. Organizations that establish visibility and accountability frameworks early will be better positioned to scale AI workloads sustainably.
+
+---
+
+## Download the Full Whitepaper
+
+This article is adapted from our whitepaper **"FinOps for AI: Managing LLM Costs in Azure OpenAI"** which provides in-depth analysis of managed LLM pricing models, deployment-level cost attribution, and CEPM implementation guides. [Book a demo](/request-demo) to receive the full whitepaper and discover how PointFive provides the visibility your AI workloads need.

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const BASE = "https://www.pointfive.co"
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 const PRODUCT_LINKS = [
   { label: "Product Overview", href: "/product", internal: true },
@@ -10,15 +10,14 @@ const PRODUCT_LINKS = [
   { label: "AI in Product", href: "/ai", internal: true },
   { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
   { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true },
-  { label: "Pricing", href: "/pricing", internal: true },
 ]
 
 const RESOURCES_LINKS = [
   { label: "Blog", href: "/blog", internal: true },
   { label: "Case Studies", href: "/case-studies", internal: true },
   { label: "Press Releases", href: "/press", internal: true },
-  { label: "Videos", href: `${BASE}/resources#videos` },
-  { label: "Knowledge Base", href: `${BASE}/knowledge-base` },
+  { label: "Product Releases", href: "/product-releases", internal: true },
+  { label: "Learning", href: "/learning", internal: true },
 ]
 
 const COMPANY_LINKS = [
@@ -103,15 +102,13 @@ export function Footer() {
               The cloud cost optimization platform that finds and fixes waste
               autonomously — so your team doesn&apos;t have to.
             </p>
-            <a
+            <Link
               href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0000EE] px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0000CC] hover:shadow-lg hover:shadow-[#0000EE]/25"
             >
               Book a Demo
               <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+            </Link>
           </div>
 
           {/* Link columns */}
@@ -131,30 +128,24 @@ export function Footer() {
             © {new Date().getFullYear()} PointFive, Inc. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5">
-            <a
-              href={`${BASE}/privacy`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/privacy"
               className="text-[12px] text-[#555570] transition-colors hover:text-[#8888A8]"
             >
               Privacy
-            </a>
-            <a
-              href={`${BASE}/terms`}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              href="/terms"
               className="text-[12px] text-[#555570] transition-colors hover:text-[#8888A8]"
             >
               Terms
-            </a>
-            <a
-              href={`${BASE}/cookies`}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              href="/cookies"
               className="text-[12px] text-[#555570] transition-colors hover:text-[#8888A8]"
             >
               Cookies
-            </a>
+            </Link>
           </div>
         </div>
       </div>

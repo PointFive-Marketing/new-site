@@ -6,6 +6,10 @@ export const metadata = {
   title: "Pricing | PointFive",
   description:
     "See your exact ROI before you sign. Enter your cloud spend — we'll show the PointFive fee, guaranteed savings, and your net financial position.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function PricingPage() {

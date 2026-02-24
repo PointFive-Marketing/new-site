@@ -32,13 +32,13 @@ export function GuaranteeProof() {
                   className="font-bold leading-none"
                   style={{ fontSize: "clamp(36px, 4vw, 52px)" }}
                 >
-                  1200%+
+                  500%+
                 </div>
                 <div className="mt-3 text-[15px] font-medium text-white/80">
                   Average customer ROI
                 </div>
                 <div className="mt-1 text-[13px] text-white/50">
-                  Savings identified vs. platform cost
+                  The real number? You wouldn&apos;t believe us
                 </div>
               </div>
               <div className="rounded-lg border border-white/10 bg-white/[0.04] p-6">

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 export function AICoworkersCta() {
   return (

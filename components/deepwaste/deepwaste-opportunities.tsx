@@ -144,11 +144,11 @@ export function DeepWasteOpportunities() {
             <p>
               Example customer achieved full ROI in 10 days. Another saved $600K
               from a single NAT Gateway endpoint deployment. Our average customer
-              ROI exceeds 1,000%.
+              ROI exceeds 500% — and the real number? You wouldn&apos;t believe it.
             </p>
           </div>
           <div className="callout-stat">
-            1000%+
+            500%+
             <br />
             <span style={{ fontSize: 13, color: "var(--neutral-300)", fontWeight: 500 }}>
               avg ROI

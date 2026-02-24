@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, Linkedin } from "lucide-react"
-import { type Post, formatDate } from "@/lib/blog"
+import { type Post, formatDate } from "@/lib/blog-types"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 

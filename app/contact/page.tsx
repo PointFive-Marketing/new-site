@@ -2,7 +2,7 @@ import { Mail, MapPin, ArrowRight } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 export const metadata = {
   title: "Contact Us | PointFive",

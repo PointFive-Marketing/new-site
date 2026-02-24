@@ -54,3 +54,9 @@ CEPM does not replace existing engineering tools. It integrates with them while 
 PointFive demonstrated rapid integration of AWS's new Database Savings Plans across its optimization workflows. This extended the platform's commitment management capabilities beyond compute into managed databases and serverless services, reflecting the broadening scope of what cloud efficiency means in practice.
 
 The message from re:Invent was clear: the era of cost visibility as a standalone strategy is over. The organizations that will thrive are those that embed efficiency into engineering culture, powered by tools that provide context, trust, and frictionless remediation.
+
+---
+
+## Learn More
+
+Want to understand how Cloud Efficiency Posture Management (CEPM) goes beyond traditional cost visibility? [Book a demo](/request-demo) to see how PointFive's platform transforms cost data into automated engineering action.

@@ -94,7 +94,7 @@ function useAnimatedValue(target: number, format: (v: number) => string) {
   return display
 }
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 const MAX_ROI_DISPLAY = 1200 // Average customer ROI; we cap display to avoid unrealistic numbers
 
 export function PricingCalculator() {
@@ -392,7 +392,7 @@ export function PricingCalculator() {
         <div className="flex items-center gap-2 text-[13px] text-neutral-600">
           <span className="h-2 w-2 rounded-full bg-primary" />
           <span>
-            Avg. customer ROI: <strong className="text-foreground">1,200%+</strong>
+            Avg. customer ROI: <strong className="text-foreground">500%+</strong>
           </span>
         </div>
         <div className="flex items-center gap-2 text-[13px] text-neutral-600">

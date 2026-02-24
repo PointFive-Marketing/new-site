@@ -3,30 +3,16 @@ import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
+import type { PostMeta, Post } from "./blog-types"
+
+export type { PostMeta, Post }
+export { formatDate } from "./blog-types"
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog")
 const CASE_STUDIES_DIR = path.join(process.cwd(), "content/case-studies")
 const PRESS_DIR = path.join(process.cwd(), "content/press")
-
-export interface PostMeta {
-  slug: string
-  title: string
-  date: string
-  author: string
-  authorTitle?: string
-  authorLinkedin?: string
-  authorPhoto?: string
-  excerpt: string
-  coverImage?: string
-  category?: string
-  tags?: string[]
-  readingTime?: string
-}
-
-export interface Post extends PostMeta {
-  content: string
-  contentHtml: string
-}
+const PRODUCT_RELEASES_DIR = path.join(process.cwd(), "content/product-releases")
+const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), "content/knowledge-base")
 
 function getPostsFromDir(dir: string): PostMeta[] {
   if (!fs.existsSync(dir)) return []
@@ -142,13 +128,43 @@ export function getAllPressSlugs(): string[] {
     .map((f) => f.replace(/\.md$/, ""))
 }
 
-// Utility
-export function formatDate(dateString: string): string {
-  if (!dateString) return ""
-  const date = new Date(dateString)
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
+// Product releases
+export function getAllProductReleases(): PostMeta[] {
+  return getPostsFromDir(PRODUCT_RELEASES_DIR)
 }
+
+export async function getProductRelease(slug: string): Promise<Post | null> {
+  return getPostFromDir(PRODUCT_RELEASES_DIR, slug)
+}
+
+export function getAllProductReleaseSlugs(): string[] {
+  if (!fs.existsSync(PRODUCT_RELEASES_DIR)) return []
+  return fs
+    .readdirSync(PRODUCT_RELEASES_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.replace(/\.md$/, ""))
+}
+
+// Knowledge base
+export function getAllKnowledgeBaseItems(): PostMeta[] {
+  return getPostsFromDir(KNOWLEDGE_BASE_DIR)
+}
+
+export async function getKnowledgeBaseItem(slug: string): Promise<Post | null> {
+  return getPostFromDir(KNOWLEDGE_BASE_DIR, slug)
+}
+
+export function getAllKnowledgeBaseSlugs(): string[] {
+  if (!fs.existsSync(KNOWLEDGE_BASE_DIR)) return []
+  return fs
+    .readdirSync(KNOWLEDGE_BASE_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.replace(/\.md$/, ""))
+}
+
+export function getKnowledgeBaseCategories(): string[] {
+  const posts = getAllKnowledgeBaseItems()
+  const cats = new Set(posts.map((p) => p.category).filter(Boolean) as string[])
+  return Array.from(cats).sort()
+}
+

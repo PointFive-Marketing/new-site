@@ -1,7 +1,7 @@
 import { ArrowRight, Check } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 
-const DEMO_URL = "https://www.pointfive.co/request-demo"
+const DEMO_URL = "/request-demo"
 
 const OFFER_ITEMS = [
   {
@@ -48,7 +48,7 @@ export function NetZeroHero() {
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#0000EE]/30 bg-[#0000EE]/10 px-4 py-1.5">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E639]" />
               <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#7eb8ff]">
-                Limited Availability · 2025
+                Net Zero Guarantee
               </span>
             </div>
             <h1
