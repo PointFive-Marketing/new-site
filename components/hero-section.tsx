@@ -33,7 +33,7 @@ export function HeroSection() {
             <div className="mb-8 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-5 py-2">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E639]" />
               <span className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#00E639]">
-                Infrastructure and AI Efficiency · 400+ detection types
+                Cloud & AI Efficiency · 400+ Recommendations
               </span>
             </div>
 
@@ -47,16 +47,16 @@ export function HeroSection() {
                 fontWeight: 700,
               }}
             >
-              Nobody finds waste like PointFive.{" "}
-              <span className="text-[#B4B4D0]">Identify it safely. Save millions.</span>
+              Nobody finds waste like us.{" "}
+              <span className="text-[#B4B4D0]">Fix it safely. Save millions.</span>
             </h1>
 
             {/* Sub */}
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-[#B4B4D0]">
               DeepWaste™ detects hidden inefficiencies others miss—across AWS, Azure, GCP,
-              Kubernetes, data platforms, and AI infrastructure. Engineering-grade
-              detection, safe to act on: performance improvements and cost savings
-              without the guesswork.
+              Kubernetes, data platforms, and AI infrastructure. Our baseline identifies
+              15–30% waste reduction, and customers usually find significantly more.
+              Engineering-grade detection, safe to act on.
             </p>
 
             {/* CTAs */}

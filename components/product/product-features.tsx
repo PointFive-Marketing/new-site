@@ -131,12 +131,12 @@ export function ProductFeatures() {
           {/* AI services optimization — dashboard window on right */}
           <FeatureBlock
             badge="AI services optimization"
-            title="Understand AI costs in real time"
-            description="Continuous visibility into AI-related cloud spend—so teams can understand where costs are coming from, how they're changing, and what's driving them, without digging through fragmented billing data."
+            title="Understand AI costs, optimize for efficiency and performance"
+            description="Continuous visibility into AI-related cloud spend and performance—so teams can understand costs, improve efficiency, and maximize throughput without digging through fragmented billing data."
             bullets={[
-              "Unified view of AI spend. Observe AI services, infrastructure and supporting resources in one place across providers.",
-              "Cost drivers, not just totals. Track what's driving AI spend—models, tokens, inference patterns and supporting infra—so teams can understand and manage growth.",
-              "Continuous AI optimization. Detect PTU vs PAYG inefficiencies, idle capacity and outdated model choices and recommend migration or rightsizing strategies.",
+              "Unified view of AI spend and performance. Observe AI services, infrastructure and supporting resources in one place across providers.",
+              "Optimize for efficiency, not just cost. Track what's driving AI spend—models, tokens, inference patterns and supporting infra—and identify opportunities to improve both cost and performance.",
+              "Continuous AI optimization. Detect PTU vs PAYG inefficiencies, idle capacity and outdated model choices. Recommend migration, rightsizing, and performance tuning strategies.",
             ]}
             media={<ProductDashboardPreview />}
             imageAlt="PointFive AI & Cloud Infrastructure dashboard"

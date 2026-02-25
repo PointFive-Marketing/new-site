@@ -8,7 +8,6 @@ import {
   ChevronDown,
   Layers,
   Search,
-  Brain,
   Bot,
   Cpu,
   FileText,
@@ -62,9 +61,8 @@ const PRODUCT_COLUMNS: NavColumn[] = [
       {
         title: "AI",
         links: [
-          { label: "AI in Product", href: "/ai", internal: true, icon: Brain, description: "AI-powered recommendations" },
+          { label: "Optimize AI Workloads", href: "/optimize-ai-workloads", internal: true, icon: Cpu, description: "Optimize AI workloads for efficiency and performance" },
           { label: "AI Co-Workers", href: "/ai-coworkers", internal: true, icon: Bot, description: "Autonomous optimization agents" },
-          { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true, icon: Cpu, description: "Reduce AI/ML infrastructure costs" },
         ],
       },
     ],
@@ -133,7 +131,7 @@ function MegaLink({ item }: { item: NavItem }) {
   const content = (
     <div className="flex items-start gap-3 rounded-lg px-2 py-2.5 transition-colors hover:bg-white/[0.06] group/link">
       {Icon && (
-        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-[#7eb8ff] transition-colors group-hover/link:bg-white/[0.1] group-hover/link:text-white">
+        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-[#00E639]/70 transition-colors group-hover/link:bg-white/[0.1] group-hover/link:text-white">
           <Icon className="h-[18px] w-[18px]" />
         </div>
       )}
@@ -164,7 +162,7 @@ function MobileMegaLink({ item, onClick }: { item: NavItem; onClick?: () => void
   const Icon = item.icon
   const content = (
     <div className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] text-[#B4B4D0] hover:bg-white/5 hover:text-white">
-      {Icon && <Icon className="h-4 w-4 shrink-0 text-[#7eb8ff]" />}
+      {Icon && <Icon className="h-4 w-4 shrink-0 text-[#00E639]/70" />}
       <span>{item.label}</span>
     </div>
   )

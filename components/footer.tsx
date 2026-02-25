@@ -7,9 +7,8 @@ const DEMO_URL = "/request-demo"
 const PRODUCT_LINKS = [
   { label: "Product Overview", href: "/product", internal: true },
   { label: "DeepWaste Detection", href: "/deepwaste", internal: true },
-  { label: "AI in Product", href: "/ai", internal: true },
+  { label: "Optimize AI Workloads", href: "/optimize-ai-workloads", internal: true },
   { label: "AI Co-Workers", href: "/ai-coworkers", internal: true },
-  { label: "AI Cost Optimization", href: "/ai-cost-optimization", internal: true },
 ]
 
 const RESOURCES_LINKS = [

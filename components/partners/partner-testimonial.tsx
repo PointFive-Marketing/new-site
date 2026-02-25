@@ -2,10 +2,10 @@ export function PartnerTestimonial() {
   return (
     <section className="bg-[#0A0A1A] py-16 md:py-20">
       <div className="mx-auto max-w-[800px] px-6">
-        <div className="rounded-xl border border-[#0000EE]/30 bg-[#0000EE]/[0.04] p-8 md:p-10">
+        <div className="rounded-xl border border-[#00E639]/30 bg-[#00E639]/[0.04] p-8 md:p-10">
           {/* Quote marks */}
           <svg
-            className="mb-4 h-8 w-8 text-[#0000EE]/40"
+            className="mb-4 h-8 w-8 text-[#00E639]/40"
             viewBox="0 0 32 32"
             fill="currentColor"
           >
@@ -20,7 +20,7 @@ export function PartnerTestimonial() {
           </blockquote>
 
           <div className="mt-6 flex items-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#0000EE]/40 to-[#7eb8ff]/40" />
+            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#00E639]/40 to-[#00E639]/20" />
             <div>
               <p className="text-[15px] font-semibold text-white">
                 Adam Zeitlin

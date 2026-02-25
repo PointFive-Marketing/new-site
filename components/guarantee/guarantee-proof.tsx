@@ -18,7 +18,7 @@ export function GuaranteeProof() {
             >
               We&apos;ve never missed.
               <br />
-              <span className="text-[#7eb8ff]">But we&apos;re ready to.</span>
+              <span className="text-[#00E639]">But we&apos;re ready to.</span>
             </h2>
             <p className="mt-4 max-w-[600px] text-[16px] leading-relaxed text-[#B4B4D0]">
               After hundreds of cloud assessments, we find actionable savings
@@ -43,7 +43,7 @@ export function GuaranteeProof() {
               </div>
               <div className="rounded-lg border border-white/10 bg-white/[0.04] p-6">
                 <div
-                  className="font-bold leading-none text-[#7eb8ff]"
+                  className="font-bold leading-none text-[#00E639]"
                   style={{ fontSize: "clamp(36px, 4vw, 52px)" }}
                 >
                   10 days
@@ -71,7 +71,7 @@ export function GuaranteeProof() {
 
           <div className="rounded-lg border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm md:p-10">
             <div className="relative">
-              <span className="absolute -left-2 -top-2 text-6xl text-[#0000EE]/40">
+              <span className="absolute -left-2 -top-2 text-6xl text-[#00E639]/40">
                 &ldquo;
               </span>
               <p
@@ -82,11 +82,11 @@ export function GuaranteeProof() {
                 }}
               >
                 It took us{" "}
-                <em className="italic text-[#7eb8ff]">10 days</em> to get full
+                <em className="italic text-[#00E639]">10 days</em> to get full
                 ROI on our partnership with PointFive
               </p>
               <div className="mt-8 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#1a1a4e] to-[#3333cc] text-[16px] font-bold text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#0a2e14] to-[#00993d] text-[16px] font-bold text-white">
                   M
                 </div>
                 <div>

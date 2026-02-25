@@ -61,6 +61,7 @@ const pillars: Array<{
     items: [
       { icon: TrendingUp, label: "Quantified Savings Calculated" },
       { icon: Gauge, label: "Performance Improvements Assessed" },
+      { icon: Eye, label: "Queryable Insights" },
     ],
   },
 ]
@@ -134,7 +135,7 @@ export function PillarsSection() {
           {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className="group relative flex flex-col rounded-sm border border-white/[0.08] bg-white/[0.04] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#0000EE]/10 md:p-6"
+              className="group relative flex flex-col rounded-sm border border-white/[0.08] bg-white/[0.04] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/[0.12] hover:bg-white/[0.06] hover:shadow-lg hover:shadow-[#00E639]/10 md:p-6"
             >
               {/* Dark band with green font (compact) */}
               <div className="mb-3 flex items-center gap-2 rounded-md border border-[#00E639]/30 bg-white/5 px-2.5 py-1.5">

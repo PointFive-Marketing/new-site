@@ -15,7 +15,8 @@ export function DeepWasteHero() {
           PointFive&apos;s DeepWaste™ Detection Engine finds cloud waste that no
           other tool can — from quick wins to deep architectural inefficiencies
           — across AWS, Azure, GCP, OCI, Snowflake, Databricks, Kubernetes, and
-          AI platforms.
+          AI platforms. Our baseline identifies 15–30% waste reduction, and
+          customers usually find significantly more.
         </p>
         <div className="hero-stats">
           <div>

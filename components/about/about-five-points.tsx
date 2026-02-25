@@ -66,12 +66,12 @@ export function AboutFivePoints() {
           {points.map((point, i) => (
             <div
               key={point.title}
-              className={`group rounded-lg border border-white/[0.06] bg-white/[0.02] p-7 transition-colors hover:border-[#0000EE]/30 hover:bg-white/[0.04] ${
+              className={`group rounded-lg border border-white/[0.06] bg-white/[0.02] p-7 transition-colors hover:border-[#00E639]/30 hover:bg-white/[0.04] ${
                 i >= 3 ? "lg:col-span-1" : ""
               }`}
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#0000EE]/20 bg-[#0000EE]/10">
-                <point.icon className="h-5 w-5 text-[#0000EE]" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#00E639]/20 bg-[#00E639]/10">
+                <point.icon className="h-5 w-5 text-[#00E639]" />
               </div>
               <h3 className="mt-5 text-[17px] font-semibold text-white">
                 {point.title}

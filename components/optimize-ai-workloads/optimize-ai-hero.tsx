@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header"
 
 const DEMO_URL = "/request-demo"
 
-export function AiCostHero() {
+export function OptimizeAiHero() {
   return (
     <section className="relative overflow-hidden bg-[#0A0A1A]">
       <div
@@ -29,7 +29,7 @@ export function AiCostHero() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00E639]/30 bg-[#00E639]/10 px-4 py-1.5">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E639]" />
               <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#00E639]">
-                AI Cost Optimization
+                AI Workload Optimization
               </span>
             </div>
 
@@ -42,16 +42,16 @@ export function AiCostHero() {
                 fontWeight: 700,
               }}
             >
-              Your AI Costs Are Growing{" "}
-              <em className="font-bold italic text-[#00E639]">Faster</em> Than
-              Your Visibility and Efficiency Efforts.
+              Optimize AI Workloads.
+              <br />
+              Drive Efficiency and Performance.
             </h1>
 
             <p className="mt-6 max-w-2xl text-pretty text-[17px] leading-relaxed text-[#B4B4D0]">
-              Engineering teams are deploying AI at unprecedented speed, but cost
-              governance hasn&apos;t kept up. PointFive gives you full visibility
-              into AI spend, allocates costs to teams, and finds optimizations
-              that traditional tools miss.
+              PointFive gives engineering teams full visibility into AI spend,
+              optimizes workload performance, allocates costs to teams, and finds
+              savings that traditional tools miss — from token-level economics to
+              PTU rightsizing across every cloud provider.
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">

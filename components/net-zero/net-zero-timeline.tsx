@@ -59,15 +59,15 @@ export function NetZeroTimeline() {
               key={step.day}
               className={`relative rounded-lg p-7 text-center ${
                 step.active
-                  ? "border border-[#0000EE]/50 bg-[#0000EE]/10"
+                  ? "border border-[#00E639]/50 bg-[#00E639]/10"
                   : "border border-white/10 bg-white/[0.03]"
               }`}
             >
               <div
                 className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-[20px] font-bold ${
                   step.active
-                    ? "bg-[#0000EE] text-white shadow-lg shadow-[#0000EE]/50"
-                    : "border border-[#0000EE]/40 bg-[#0000EE]/10 text-[#7eb8ff]"
+                    ? "bg-[#00E639] text-white shadow-lg shadow-[#00E639]/50"
+                    : "border border-[#00E639]/40 bg-[#00E639]/10 text-[#00E639]"
                 }`}
               >
                 {i + 1}

@@ -62,7 +62,7 @@ export function AIHero() {
 
           {/* Product demo video */}
           <div className="mt-14">
-            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#00E639]/10">
               <video
                 autoPlay
                 loop

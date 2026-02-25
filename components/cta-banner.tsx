@@ -29,7 +29,7 @@ export function CtaBanner() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-lg text-pretty text-lg leading-relaxed text-[#B4B4D0]">
-          Book a demo. We&apos;ll show you every opportunity we find and how to fix it safely—performance and cost in one flow.
+          Our baseline identifies 15–30% waste reduction, and customers usually find significantly more. Book a demo to see your savings.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

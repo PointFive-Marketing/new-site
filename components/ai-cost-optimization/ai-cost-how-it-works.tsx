@@ -56,7 +56,7 @@ export function AiCostHowItWorks() {
           {STEPS.map((s) => (
             <div key={s.step} className="relative">
               <p
-                className="font-mono font-bold text-[#0000EE]/30"
+                className="font-mono font-bold text-[#00E639]/30"
                 style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
               >
                 {s.step}

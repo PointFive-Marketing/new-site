@@ -65,7 +65,7 @@ export function GuaranteeHero() {
               in 48 hours.
             </h1>
             <p
-              className="mt-4 text-[#7eb8ff]"
+              className="mt-4 text-[#00E639]"
               style={{
                 fontSize: "clamp(20px, 2.5vw, 28px)",
                 lineHeight: 1.3,
@@ -77,8 +77,9 @@ export function GuaranteeHero() {
             </p>
             <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-[#B4B4D0]">
               Connect your cloud accounts. Get a full savings report in 48
-              hours. If we can&apos;t find meaningful savings, dinner&apos;s on
-              us — up to $1,000. No strings attached.
+              hours. Our baseline identifies 15–30% waste reduction, and
+              customers usually find significantly more. If we can&apos;t find
+              meaningful savings, dinner&apos;s on us — up to $1,000.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a

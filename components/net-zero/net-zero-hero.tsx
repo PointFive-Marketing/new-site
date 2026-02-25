@@ -45,9 +45,9 @@ export function NetZeroHero() {
 
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 pb-20 pt-16 md:grid-cols-2 md:gap-16 md:pb-28 md:pt-24 lg:gap-20">
           <div className="flex flex-col justify-center">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#0000EE]/30 bg-[#0000EE]/10 px-4 py-1.5">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#00E639]/30 bg-[#00E639]/10 px-4 py-1.5">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00E639]" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#7eb8ff]">
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#00E639]">
                 Net Zero Guarantee
               </span>
             </div>
@@ -61,7 +61,7 @@ export function NetZeroHero() {
               }}
             >
               Guaranteed{" "}
-              <em className="font-bold italic text-[#7eb8ff]">net positive.</em>
+              <em className="font-bold italic text-[#00E639]">net positive.</em>
               <br />
               Every term.
             </h1>

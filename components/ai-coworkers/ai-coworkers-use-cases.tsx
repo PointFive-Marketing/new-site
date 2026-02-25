@@ -93,7 +93,7 @@ export function AICoworkersUseCases() {
         </div>
 
         {/* Product screenshot - weekly report setup */}
-        <div className="mb-12 overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+        <div className="mb-12 overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#00E639]/10">
           <Image
             src="/ai-coworkers/coworker-report.jpg"
             alt="PointFive AI Co-workers setting up a weekly cost optimization summary report with Slack channel and schedule selection"

@@ -111,7 +111,7 @@ export function AICoworkersHero() {
 
           {/* Product demo video */}
           <div className="mt-14">
-            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#0000EE]/10">
+            <div className="overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-[#00E639]/10">
               <video
                 autoPlay
                 loop
@@ -164,7 +164,7 @@ export function AICoworkersHero() {
               {STATS.map((s, i) => (
                 <div key={i} className="text-center">
                   <p
-                    className="font-bold text-[#0000EE]"
+                    className="font-bold text-[#00E639]"
                     style={{ fontSize: "clamp(36px, 4vw, 56px)" }}
                   >
                     {s.value}
