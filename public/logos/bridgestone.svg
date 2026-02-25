@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+  <!-- Bridgestone italic bold wordmark -->
+  <text x="4" y="28" font-family="'Georgia', 'Times New Roman', serif" font-size="22" font-weight="700" fill="#1a1a1a" font-style="italic" letter-spacing="0.8">BRIDGESTONE</text>
+  <!-- Red accent line -->
+  <rect x="4" y="32" width="22" height="2.5" rx="1.2" fill="#E4002B"/>
+</svg>

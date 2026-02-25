@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" fill="none">
-  <text x="0" y="23" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="900" fill="#1a1a1a" letter-spacing="1.5" text-transform="uppercase">FANATICS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 40" fill="none">
+  <!-- Red F pennant flag icon -->
+  <polygon points="3,5 3,36 9,36 9,25 21,25 21,19 9,19 9,11 23,11 23,5" fill="#E4002B"/>
+  <polygon points="17,5 23,5 28,11 23,11" fill="#E4002B"/>
+  <!-- Fanatics wordmark -->
+  <text x="34" y="28" font-family="'Helvetica Neue', Arial, sans-serif" font-size="19" font-weight="800" fill="#0C2340" letter-spacing="0.3">Fanatics</text>
 </svg>

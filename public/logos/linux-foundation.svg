@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <!-- Blue square icon with LF -->
+  <rect x="2" y="6" width="28" height="28" rx="3" fill="#003778"/>
+  <text x="7" y="26" font-family="'Arial', Helvetica, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF">LF</text>
+  <!-- THE LINUX FOUNDATION stacked text -->
+  <text x="36" y="18" font-family="'Arial', Helvetica, sans-serif" font-size="10.5" font-weight="400" fill="#333333" letter-spacing="0.3">THE LINUX</text>
+  <text x="36" y="31" font-family="'Arial', Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#333333" letter-spacing="0.3">FOUNDATION</text>
+</svg>

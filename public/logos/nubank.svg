@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 32" fill="none">
-  <text x="0" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" fill="#820AD1" letter-spacing="0.5">Nubank</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Nu monogram -->
+  <text x="0" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="800" fill="#820AD1" letter-spacing="-0.5">Nu</text>
+  <!-- bank text lighter weight -->
+  <text x="30" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="400" fill="#820AD1" letter-spacing="-0.5">bank</text>
 </svg>

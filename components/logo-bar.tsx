@@ -1,10 +1,14 @@
 const logoEntries = [
-  { name: "H&M", slug: "hm", domain: "hm.com" },
-  { name: "Fanatics", slug: "fanatics", domain: "fanatics.com" },
-  { name: "Nubank", slug: "nubank", domain: "nubank.com.br" },
-  { name: "Hertz", slug: "hertz", domain: "hertz.com" },
-  { name: "E.ON", slug: "eon", domain: "eon.com" },
   { name: "Accor", slug: "accor", domain: "accor.com" },
+  { name: "The Linux Foundation", slug: "linux-foundation", domain: "linuxfoundation.org" },
+  { name: "Bridgestone", slug: "bridgestone", domain: "bridgestone.com" },
+  { name: "E.ON", slug: "eon", domain: "eon.com" },
+  { name: "Fanatics", slug: "fanatics", domain: "fanatics.com" },
+  { name: "Hertz", slug: "hertz", domain: "hertz.com" },
+  { name: "NICE", slug: "nice", domain: "nice.com" },
+  { name: "Nubank", slug: "nubank", domain: "nubank.com.br" },
+  { name: "H&M", slug: "hm", domain: "hm.com" },
+  { name: "Checkmarx", slug: "checkmarx", domain: "checkmarx.com" },
 ]
 
 export function LogoBar() {
@@ -29,7 +33,7 @@ export function LogoBar() {
               <img
                 src={`/logos/${entry.slug}.svg`}
                 alt=""
-                className="h-full w-auto max-w-[120px] object-contain object-center"
+                className="h-full w-auto max-w-[140px] object-contain object-center"
                 loading="eager"
               />
             </a>

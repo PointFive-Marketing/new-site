@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 32" fill="none">
-  <text x="0" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#1B2B4B" letter-spacing="2">Accor</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <!-- Golden bird/seagull mark -->
+  <path d="M6 24 Q10 14, 14 18 Q12 12, 18 16 Q16 8, 22 14 Q20 10, 26 16 Q24 8, 30 16" stroke="#C5A44E" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- ACCOR text -->
+  <text x="38" y="28" font-family="'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" fill="#1B2B4B" letter-spacing="3.5">ACCOR</text>
 </svg>
